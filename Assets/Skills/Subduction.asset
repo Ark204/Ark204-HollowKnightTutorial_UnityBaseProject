@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5085982030965384686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6e1996ffb741c46917ec0aa980fa93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-407602433451878236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a8eb8c4fbad3c4bb8edbea27fd4179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 45
+  direct: {x: 0.70710677, y: -0.70710677}
+--- !u!114 &-108186301555644460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e24f633ddd5590244b9f297d04f92eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0.4, y: 0.75, z: 0}
+  scale: 1
+  attackEffect: {fileID: 3218031785959676808, guid: d7cca0a8bb2ae2a4192c7e476562d309, type: 3}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd670ed6420ab3d4993234d90d86f3a6, type: 3}
+  m_Name: Subduction
+  m_EditorClassIdentifier: 
+  m_skillID: 8
+  m_loop: 0
+  m_endTime: 0.3
+  startDeles:
+  - {fileID: -108186301555644460}
+  timePoints: []
+  stopDeles: []
+  exitDeles:
+  - {fileID: -5085982030965384686}
+  - {fileID: -407602433451878236}
+  bSkills: []

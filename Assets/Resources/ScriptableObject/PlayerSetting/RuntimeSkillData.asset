@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a306c80f1ec5727469b68c892bc1d6e4, type: 3}
+  m_Name: RuntimeSkillData
+  m_EditorClassIdentifier: 
+  m_rSkillCfgs:
+  - m_id: 5
+    m_cdTimee: 200
+    m_lastCdTime: 51.827934

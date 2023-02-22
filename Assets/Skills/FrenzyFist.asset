@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd670ed6420ab3d4993234d90d86f3a6, type: 3}
+  m_Name: FrenzyFist
+  m_EditorClassIdentifier: 
+  m_skillID: 9
+  m_loop: 0
+  m_endTime: 0.35
+  startDeles:
+  - {fileID: 5374818761751152046}
+  timePoints: []
+  stopDeles: []
+  exitDeles:
+  - {fileID: 1448163068386658787}
+  - {fileID: 9148872728526442230}
+  bSkills: []
+--- !u!114 &1448163068386658787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bedaf4d0cf540b49a19b5d90ac5fd87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0.3
+  radus: 4
+--- !u!114 &5374818761751152046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e24f633ddd5590244b9f297d04f92eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0.4, y: 0.75, z: 0}
+  scale: 1.25
+  attackEffect: {fileID: 2958941887313479466, guid: e38127023339a5e48a5426e9aaab582b, type: 3}
+--- !u!114 &9148872728526442230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e24f633ddd5590244b9f297d04f92eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0.4, y: 2.3, z: 0}
+  scale: 1
+  attackEffect: {fileID: 1696249008367411550, guid: 56c899b8fcc187d4290d49f1312cee4e, type: 3}

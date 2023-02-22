@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7147819609061756120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6959a6105eadcd34fa351f1304f81c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd670ed6420ab3d4993234d90d86f3a6, type: 3}
+  m_Name: Substitute
+  m_EditorClassIdentifier: 
+  m_skillID: 10
+  m_loop: 0
+  m_endTime: 0.5
+  startDeles: []
+  timePoints:
+  - effectTime: 0.5
+    bDele: {fileID: 6333441211483489057}
+  - effectTime: 0.5
+    bDele: {fileID: -7147819609061756120}
+  stopDeles: []
+  exitDeles:
+  - {fileID: 7401852923233971802}
+  bSkills: []
+--- !u!114 &6333441211483489057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c8f24d8483e7f4e9619cd31daa4c20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7401852923233971802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6917d991e02e140a71a994ce44c428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

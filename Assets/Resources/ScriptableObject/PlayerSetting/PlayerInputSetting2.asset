@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8090f6bf6804a4f44820e84b1ad47caa, type: 3}
+  m_Name: PlayerInputSetting2
+  m_EditorClassIdentifier: 
+  jumpKey: 100
+  dashKey: 32
+  upswingKey: 50
+  subductionKey: 119
+  cycloneKey: 101
+  attackKey: 97
+  keyPairs:
+  - keyName: upKey
+    currKeyCode: 273
+  - keyName: downKey
+    currKeyCode: 274
+  - keyName: leftKey
+    currKeyCode: 276
+  - keyName: rightKey
+    currKeyCode: 275
+  - keyName: jumpKey
+    currKeyCode: 100
+  - keyName: dashKey
+    currKeyCode: 32
+  - keyName: attackKey
+    currKeyCode: 97
+  - keyName: upswingKey
+    currKeyCode: 50
+  - keyName: subductionKey
+    currKeyCode: 119
+  - keyName: cycloneKey
+    currKeyCode: 101

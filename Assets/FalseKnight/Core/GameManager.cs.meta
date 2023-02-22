@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: ebf959ff6f8d41c1997ac8a377a68314
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_saveScene: {fileID: 11400000, guid: 15e5070e9bdca8842b8f99b4098cd6f1, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

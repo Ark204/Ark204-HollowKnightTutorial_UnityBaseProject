@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7066287242866900257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc15b7c3dc9371a4bbd20d02cf3855cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upForce: 2400
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd670ed6420ab3d4993234d90d86f3a6, type: 3}
+  m_Name: Upswing
+  m_EditorClassIdentifier: 
+  m_skillID: 6
+  m_loop: 0
+  m_endTime: 0.3
+  startDeles:
+  - {fileID: 4005580018340881039}
+  timePoints: []
+  stopDeles: []
+  exitDeles:
+  - {fileID: -7066287242866900257}
+  bSkills: []
+--- !u!114 &4005580018340881039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e24f633ddd5590244b9f297d04f92eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0.98, y: 1.76, z: 0}
+  scale: 1
+  attackEffect: {fileID: 1267670110627953568, guid: 0e7c6b2d41cc3a64f82e1899c324d894, type: 3}
