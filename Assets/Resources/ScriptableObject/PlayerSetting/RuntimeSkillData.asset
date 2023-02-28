@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RuntimeSkillData
   m_EditorClassIdentifier: 
   m_rSkillCfgs:
-  - m_id: 5
-    m_cdTimee: 200
-    m_lastCdTime: 51.827934
+  - m_Info: {fileID: 11400000, guid: 2698e8f3be6d96e4d981f97d9611d51a, type: 2}
+    m_lastCdTime: -0.0010533342
+  - m_Info: {fileID: 11400000, guid: 02fa6328c1bc18245b861ec9dde34f82, type: 2}
+    m_lastCdTime: -0.0073423022

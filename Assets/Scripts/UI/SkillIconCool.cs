@@ -9,7 +9,7 @@ public class SkillIconCool : MonoBehaviour
     [SerializeField]Image cdOcclusion;
     [SerializeField] RuntimeSkillCfg m_runtimeSkillCfg;
     [SerializeField] int m_skillId;
-    RSkillCfg skillCfg;//此UI对应的技能的数据
+    RSkillEntity skillCfg;//此UI对应的技能的数据
     private void Awake()
     {
         lastCDtimeText = GetComponentInChildren<Text>();

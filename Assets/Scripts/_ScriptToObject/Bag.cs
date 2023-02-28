@@ -25,6 +25,7 @@ public class Bag : BSaveData
         }
         return 0;
     }
+    //增加物品
     public void AddItem(ItemInfo info,uint count)
     {
         foreach(var item in items)
@@ -35,6 +36,8 @@ public class Bag : BSaveData
         ItemEntity newItem = new ItemEntity(info, count);//创建新的ItemEntity
         items.Add(newItem);//添加进背包
     }
+    public void AddItem(ItemInfo info, int count) { AddItem(info, (uint)count); }
+    //减少物品
     public bool SubItem(ItemInfo info,uint count)
     {
         foreach(var item in items)

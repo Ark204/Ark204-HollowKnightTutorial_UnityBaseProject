@@ -86,11 +86,11 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         cam = Camera.main;
         camController = cam.GetComponent<CameraController>();
         //Skill
-        m_skillCfg = m_runtimeSkillCfg.RSkillCfgMap[m_skillId];
+        moveCtrl.OnLanded += () => useable = true;
     }
     private void Update()
     {
-        if (m_skillCfg.LastCdTime> 0) m_skillCfg.LastCdTime -= Time.deltaTime;//更新冷却时间
+        m_runtimeSkillCfg.SubCD(Time.deltaTime);//调用减CD
         //if (!CanBeHit) return;//受伤无敌状态 直接返回
         if (skillManager.currSkill == null)
         {
@@ -100,8 +100,8 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
             if (Input.GetButtonDown("Storage")) skillManager.UseSkill(3);
             if (Input.GetButtonDown("Cure") && Energe > 0 && moveCtrl.isOnGround) skillManager.UseSkill(4);
             if (Input.GetButtonDown("Shield") && Energe > 2 && moveCtrl.isOnGround) { skillManager.UseSkill(5); }
-            if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["upswingKey"])) skillManager.UseSkill(6);
-            if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["cycloneKey"]) && !moveCtrl.isOnGround) skillManager.UseSkill(7);
+            if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["upswingKey"])) Upswing();
+            if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["cycloneKey"]) && !moveCtrl.isOnGround) Cyclone();
             if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["subductionKey"]) && !moveCtrl.isOnGround) skillManager.UseSkill(8);
             if (Input.GetKeyDown(KeyCode.Q)) skillManager.UseSkill(9);
             if (Input.GetKeyDown(KeyCode.H)) NewCure();
@@ -144,13 +144,39 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
     #region New Cure
     [SerializeField] RuntimeSkillCfg m_runtimeSkillCfg;
     [SerializeField] int m_skillId;
-    RSkillCfg m_skillCfg;//此UI对应的技能的数据
     void NewCure()
     {
-        if(/*skillManager.currSkill==null&&*/m_skillCfg.LastCdTime<=0)//冷却时间为零
+        if (!m_runtimeSkillCfg.RSkillCfgMap.ContainsKey(m_skillId)) { Debug.Log("尚未获得此技能"); return; }
+        var skillCfg = m_runtimeSkillCfg.RSkillCfgMap[m_skillId];
+        if (skillCfg.LastCdTime<=0)//冷却时间为零
         {
-            Hp += 1;
-            m_skillCfg.LastCdTime = 200f;//重新进入CD
+            Hp += 1;//用skillManager调用技能
+            skillCfg.LastCdTime = skillCfg.CdTime;//重新进入CD
+        }
+    }
+    #endregion
+
+    #region upswing
+    [SerializeField] int upswingId;
+    [SerializeField] bool useable=true;//是否可用
+    void Upswing()//上挑
+    {
+        if (!m_runtimeSkillCfg.RSkillCfgMap.ContainsKey(upswingId)) { Debug.Log("尚未获得此技能"); return; }
+        if (!useable) { Debug.Log("未重置"); return; }
+        skillManager.UseSkill(6);//用skillManager调用技能
+        useable = false;
+    }
+    #endregion
+
+    #region Cyclone
+    void Cyclone()
+    {
+        if (!m_runtimeSkillCfg.RSkillCfgMap.ContainsKey(7)) { Debug.Log("尚未获得此技能"); return; }
+        var skillCfg = m_runtimeSkillCfg.RSkillCfgMap[7];
+        if (skillCfg.LastCdTime <= 0)//冷却时间为零
+        {
+            skillManager.UseSkill(7);//用skillManager调用技能
+            skillCfg.LastCdTime = skillCfg.CdTime;//重新进入CD
         }
     }
     #endregion
@@ -172,7 +198,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
             {
                 if (target.marked)
                 {
-                    m_skillCfg.LastCdTime -= 180f;//额外冷却减免
+                    m_runtimeSkillCfg.SubCD(180f);//额外冷却减免
                     target.RemoveModifier();//移除标记
                 }
                 Energe++;//每命中一个敌人增加一点能量
