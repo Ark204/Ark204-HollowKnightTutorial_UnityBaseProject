@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  id: 8
 --- !u!58 &1998233097435366000
 CircleCollider2D:
   m_ObjectHideFlags: 0

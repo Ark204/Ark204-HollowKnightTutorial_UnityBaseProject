@@ -7,7 +7,7 @@ public class EnemyAttack : EnemyAction
 {
     [SerializeField] [Range(-1, 1)] int baseFace;
     [SerializeField] Bounds attackRange;
-    [SerializeField] int damage;
+    [SerializeField] int damage=10;
     [SerializeField] float pushPower;
     [SerializeField] Object attackEffect;
 

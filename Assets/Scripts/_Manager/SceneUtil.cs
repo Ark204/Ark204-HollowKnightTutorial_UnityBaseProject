@@ -8,13 +8,13 @@ public class SceneUtil : MonoSingleton<SceneUtil>
 
     protected override void Awake()
     {
-        base.Awake();
+        base.Awake();     
         DontDestroyOnLoad(this.gameObject);
     }
     //指定转移
     public void TransScene(string sceneName, int targetId)
     {
-        StartCoroutine(Transition(sceneName, targetId));
+        StartCoroutine(Transition(sceneName, targetId));  
     }
     //回到存档点
     public void TransScene()

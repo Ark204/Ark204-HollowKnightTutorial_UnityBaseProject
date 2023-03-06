@@ -28,6 +28,7 @@ public class SkillIconCool : MonoBehaviour
         }
         else
         {
+            cdOcclusion.fillAmount = 0;
             lastCDtimeText.gameObject.SetActive(false);
         }
     }

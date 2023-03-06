@@ -4826,7 +4826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6672175547601923424}
   - component: {fileID: 8948125812715751348}
-  - component: {fileID: 2564234635686345312}
+  - component: {fileID: 3789528086302557624}
   m_Layer: 0
   m_Name: EliteShieldField
   m_TagString: Untagged
@@ -4867,7 +4867,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2564234635686345312
+--- !u!114 &3789528086302557624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4876,10 +4876,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 6670790582094689504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f7d95e765869af4d98949f4e47f3241, type: 3}
+  m_Script: {fileID: 11500000, guid: 572bd2c8636b4db8b3de83ec8ccd5619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_acceptType: 1
+  m_acceptType: 5
+  marked: 0
+  hitType: 0
+  disableHitEffect: 0
+  spriteParent: {fileID: 0}
+  customHitEffect: {fileID: 0}
+  customHitSound: {fileID: 0}
+  hideWhenDead: 0
+  hitMaterial: {fileID: 0}
+  health: 100
+  m_currentHp: 0
+  deathParticles: {fileID: 0}
+  objects: []
+  amount: 0
 --- !u!1 &6670851531528177562
 GameObject:
   m_ObjectHideFlags: 0

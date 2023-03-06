@@ -13,9 +13,9 @@ public class TelePorting : EnemyAction
     protected override void OnStart() {
         base.OnStart();
         //计算左右两个瞬移目标点
-        float left = target.position.x - distance;
-        float right = target.position.x + distance;
-        float axisY = followY ? target.position.y : landY;
+        float left = range.target.position.x - distance;
+        float right =range.target.position.x + distance;
+        float axisY = followY ? range.target.position.y : landY;
         if (Mathf.Abs(left) > radius) context.transform.position = new Vector2(right, axisY+offsetY);//y轴跟随
         else if(Mathf.Abs(right)>radius) context.transform.position= new Vector2(left, axisY+offsetY);//y轴跟随
         else//随机选择

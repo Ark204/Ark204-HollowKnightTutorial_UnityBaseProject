@@ -4852,7 +4852,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -525760289
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: -1
   m_RenderMode: 0
   m_SortMode: 0
@@ -4888,8 +4888,7 @@ AudioSource:
   m_GameObject: {fileID: 1352256761504476}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243211825595574450, guid: d64a0ab1c4a0847e88be7a0768b7b584,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 243211825595574450, guid: d64a0ab1c4a0847e88be7a0768b7b584, type: 2}
   m_audioClip: {fileID: 8300000, guid: 62e0a64af077b4187b2584c1b02209cf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -4985,7 +4984,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4984787714017484}
-  - component: {fileID: 114662928975892852}
   - component: {fileID: 114242110960759840}
   - component: {fileID: 70361015519134056}
   - component: {fileID: 50673192763084334}
@@ -5019,55 +5017,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114662928975892852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352296235387608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24bd338ffcf5247648de88f565c8b84c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minGroundNormalY: 0.65
-  gravityModifier: 3
-  contactFilter:
-    useTriggers: 0
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 1280
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  enemyBase: {fileID: 0}
-  graphic: {fileID: 1352296235387608}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 16640
-  enemyType: 0
-  attentionRange: 1.09
-  changeDirectionEase: 2
-  followPlayer: 0
-  flipWhenTurning: 0
-  hurtLaunchPower: 14
-  jumping: 0
-  jumpPower: 7
-  maxSpeed: 3
-  maxSpeedDeviation: 1
-  neverStopFollowing: 0
-  rayCastSize: {x: 1.5, y: 1}
-  rayCastOffset: {x: 1, y: 0.46}
-  sitStillWhenNotFollowing: 0
-  jumpSound: {fileID: 8300000, guid: a69256e0605cd46c19e2fe34da9587b5, type: 3}
-  stepSound: {fileID: 0}
 --- !u!114 &114242110960759840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5133,8 +5082,7 @@ AudioSource:
   m_GameObject: {fileID: 1352296235387608}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243211825595574450, guid: d64a0ab1c4a0847e88be7a0768b7b584,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 243211825595574450, guid: d64a0ab1c4a0847e88be7a0768b7b584, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -10148,7 +10096,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1524664889
-  m_SortingLayer: 6
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
@@ -15022,7 +14970,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -525760289
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
@@ -15060,7 +15008,6 @@ GameObject:
   - component: {fileID: 4956277566329886}
   - component: {fileID: 212648738346672352}
   - component: {fileID: 60484452874604080}
-  - component: {fileID: 114688773805575022}
   - component: {fileID: 50215644195583874}
   m_Layer: 12
   m_Name: AttackHit
@@ -15121,7 +15068,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1524664889
-  m_SortingLayer: 6
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1cece6b8e403544279b30b97a7ce2d13, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 0}
@@ -15163,24 +15110,6 @@ PolygonCollider2D:
       - {x: -0.13796182, y: 0.0036260288}
       - {x: 0.13469917, y: 0.0025780953}
       - {x: 0.1357926, y: 0.2141543}
---- !u!114 &114688773805575022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887758420009804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd3b469cc09d64f4695c6375aacdaa97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attacksWhat: 1
-  oneHitKill: 0
-  startCollisionDelay: 0
-  parent: {fileID: 1352296235387608}
-  isBomb: 0
-  hitPower: 1
 --- !u!50 &50215644195583874
 Rigidbody2D:
   serializedVersion: 4
@@ -20049,7 +19978,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1524664889
-  m_SortingLayer: 6
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
@@ -24923,7 +24852,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1524664889
-  m_SortingLayer: 6
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0

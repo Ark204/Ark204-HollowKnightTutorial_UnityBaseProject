@@ -6,8 +6,12 @@ using TheKiwiCoder;
 //条件节点(判断玩家的距离是否在一定范围内)
 public class IsPlayerFar : EnemyAction
 {
-    [SerializeField] public float range=5;
+    [SerializeField] public float m_range=5;
     protected override State OnUpdate() {
-        return Mathf.Abs(context.transform.position.x - target.transform.position.x) < range ? State.Success : State.Failure;
+        try
+        {
+            return Mathf.Abs(context.transform.position.x - range.target.transform.position.x) < m_range ? State.Success : State.Failure;
+        }
+        catch { return State.Failure; }
     }
 }

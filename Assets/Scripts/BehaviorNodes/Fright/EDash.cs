@@ -24,7 +24,7 @@ public class EDash : EnemyAction
         if (!followYAxis) body.velocity = new Vector3(speed * context.transform.localScale.x * baseFace, body.velocity.y);
         else
         {
-            Vector2 direct = context.transform.position - target.transform.position;//计算方向向量
+            Vector2 direct = context.transform.position - range.target.transform.position;//计算方向向量
             body.velocity = direct * speed;
         }
     }

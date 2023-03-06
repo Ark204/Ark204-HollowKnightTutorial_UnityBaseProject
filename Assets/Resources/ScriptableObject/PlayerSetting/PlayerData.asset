@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   m_saveData:
-    maxHp: 5
+    maxHp: 50
     maxEnerge: 10
     attackPower: 1
-  HP: 4
+  HP: 40
   Energe: 10

@@ -5,10 +5,10 @@ using TheKiwiCoder;
 
 public abstract class EnemyAction : ActionNode
 {
-    [SerializeField]protected Transform target;
+    [SerializeField]protected RangeTarget range;
     protected override void OnStart()
     {
-        target = context.gameObject.GetComponentInChildren<RangeTarget>().target;
+        range = context.gameObject.GetComponentInChildren<RangeTarget>();
     }
 
     protected override void OnStop()

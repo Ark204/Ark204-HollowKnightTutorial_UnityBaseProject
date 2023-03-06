@@ -66,6 +66,8 @@ public static class TQueueExtion
     }
     #endregion
 
+    //Action
+    public static Action<int> OnSkillHurt;//技能命中事件
 }
 //静态存档系统
 public static class SaveSystem

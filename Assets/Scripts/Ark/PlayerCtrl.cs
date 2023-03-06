@@ -41,13 +41,15 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         return sb.ToString();
     }
 
-    [MonitorProperty]
-    [MFontSize(16)]
-    [MGroupElement(false)]
-    [MPosition(UIPosition.UpperLeft)]
-    [MFontName("JetBrainsMono-Regular")]
-    [MTextColor(ColorPreset.Red)]
-    [MValueProcessor(nameof(PlayerHpUI))]
+    #region Monitor
+    //[MonitorProperty]
+    //[MFontSize(16)]
+    //[MGroupElement(false)]
+    //[MPosition(UIPosition.UpperLeft)]
+    //[MFontName("JetBrainsMono-Regular")]
+    //[MTextColor(ColorPreset.Red)]
+    //[MValueProcessor(nameof(PlayerHpUI))]
+    #endregion
     public int Hp
     {
         get => playerData.HP;
@@ -57,7 +59,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
             else playerData.HP = value;
         }
     }
-    [Monitor]public int Energe
+    /*[Monitor]*/public int Energe
     {
         get => playerData.Energe;
         set {
@@ -70,6 +72,22 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
     public int MaxEnerge { get => playerData.MaxEnerge; private set => playerData.MaxEnerge = value; }
     public float AttackPower { get => playerData.AttackPower; private set => playerData.AttackPower = value; }
     public float pushPower = 1f;
+    [Header("Sub CD")]
+    public float SubTime = 30f;//触发减CD时减少的时间
+    int lastSkillID=-1;//上一个命中的技能ID
+    //暂时使用中心事件队列实现
+    void TriggerSub(int id)
+    {
+        if (id == 11) Hp+=2;//TODO:ID视化
+        if (lastSkillID == id) return;//技能相同 直接返回
+        //触发减CD
+        foreach(var elem in m_runtimeSkillCfg.RSkillCfgMap)
+        {
+            if (elem.Key == id) continue;//若命中技能为释放技能，则跳过
+            if (elem.Value.LastCdTime > 0) elem.Value.LastCdTime -= SubTime;//若CD大于零，则减少CD
+        }
+        lastSkillID = id;//更新上一次命中技能ID
+    }
     /// <summary>
     /// 设置是否禁用移动模块
     /// </summary>
@@ -86,10 +104,22 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         cam = Camera.main;
         camController = cam.GetComponent<CameraController>();
         //Skill
-        moveCtrl.OnLanded += () => useable = true;
+        moveCtrl.OnLanded += ResetUpswing;//增加监听
+        TQueueExtion.OnSkillHurt += TriggerSub;//增加监听
+    }
+    private void ResetUpswing()
+    {
+        useable = true;
+    }
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+        moveCtrl.OnLanded -= ResetUpswing;//移除监听
+        TQueueExtion.OnSkillHurt -= TriggerSub;//移除监听
     }
     private void Update()
     {
+        
         m_runtimeSkillCfg.SubCD(Time.deltaTime);//调用减CD
         //if (!CanBeHit) return;//受伤无敌状态 直接返回
         if (skillManager.currSkill == null)
@@ -106,6 +136,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
             if (Input.GetKeyDown(KeyCode.Q)) skillManager.UseSkill(9);
             if (Input.GetKeyDown(KeyCode.H)) NewCure();
             if(Input.GetKeyDown(KeyCode.LeftShift)) skillManager.UseSkill(10);
+            if (Input.GetKeyDown(KeyCode.R)) Chop();
         }
         if (Input.GetButtonUp("Storage")) skillManager.StopSkill(3);
         if (Input.GetButtonUp("Cure") || Energe <= 0) skillManager.StopSkill(4);
@@ -151,6 +182,19 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         if (skillCfg.LastCdTime<=0)//冷却时间为零
         {
             Hp += 1;//用skillManager调用技能
+            skillCfg.LastCdTime = skillCfg.CdTime;//重新进入CD
+        }
+    }
+    #endregion
+
+    #region Chop
+    void Chop()
+    {
+        if (!m_runtimeSkillCfg.RSkillCfgMap.ContainsKey(11)) { Debug.Log("尚未获得此技能"); return; }
+        var skillCfg = m_runtimeSkillCfg.RSkillCfgMap[11];
+        if (skillCfg.LastCdTime <= 0)//冷却时间为零
+        {
+            skillManager.UseSkill(11);//用skillManager调用技能
             skillCfg.LastCdTime = skillCfg.CdTime;//重新进入CD
         }
     }
@@ -202,6 +246,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
                     target.RemoveModifier();//移除标记
                 }
                 Energe++;//每命中一个敌人增加一点能量
+                TriggerSub(0);//触发-CD
             }
         }
         onAttack?.Invoke(caculateDamage, getTargets);
@@ -255,6 +300,10 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         }
     }
     [SerializeField] bool substitute = false;
+    [SerializeField] float distance=3f;//瞬移距离
+    [SerializeField] LayerMask Impenetrable;//瞬移不可穿透的层
+    [SerializeField] Vector3 offset;
+    [SerializeField] float ImpOffset=0.2f;//遇到不可穿透层的偏移
     [Monitor]
     public bool Substitute//替身术状态
     {
@@ -278,7 +327,17 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         skillManager.Interrupt();//中断技能（移除完全静止）
         CanBeHit = false;//进入无敌状态
         StartCoroutine(TQueueExtion.DelayFunc(() => { CanBeHit = true; }, 0.2f));//持续时间后移除
-        //位移、-CD
+        Vector2 dir = new Vector2(InputManager.GetAxisRaw("Horizontal"), InputManager.GetAxisRaw("Vertical"));//获取方向向量
+        //射线检测目标方向-->瞬移距离=Min(distance,Line)
+        Debug.Log(dir);//看看方向
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position + offset, dir, distance, Impenetrable);
+        float trueDis = distance;//真正瞬移距离
+        if (hitInfo.collider != null)//该方向上有地形阻挡
+        {
+            trueDis = Vector2.Distance(transform.position + offset, hitInfo.point);//真正瞬移距离为当前位置到地形的距离
+        }
+        transform.position = transform.position + (Vector3)dir.normalized * trueDis;//瞬移
+        m_runtimeSkillCfg.SubCD(SubTime);//-CD,全体，包括自身
         return true;
     }
     public bool Invincible { get; set; }

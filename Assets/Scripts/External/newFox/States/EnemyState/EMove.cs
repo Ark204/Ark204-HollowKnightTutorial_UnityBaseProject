@@ -16,7 +16,7 @@ public class EMove : StateMachineBehaviour
         if (enemyCtrl == null) enemyCtrl = animator.GetComponent<EnemyCtrl>();
         m_transform = enemyCtrl.m_transform;
         //构造巡逻目标
-        targetPoint = enemyCtrl.GetRandomTarget();
+        targetPoint = enemyCtrl.GetRandomTarget();  
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
