@@ -15,7 +15,8 @@ namespace Core.Combat
         {
             attackCollider.enabled = true;
             EffectManager.Instance.PlayOneShot(impactEffect, impactTransform.position);
-            CameraController.Instance.ShakeCamera(cameraShakeIntensity);
+            //CameraController.Instance.ShakeCamera(cameraShakeIntensity);
+            CameraEffects.Instance.Shake(cameraShakeIntensity*200);
         }
         
         private void OnAttackEnd()

@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: e0598a688a6c76d4e94bedabf2e4ed31
-  position: {x: 529.92004, y: 1068}
+  position: {x: 548, y: 1073.5997}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -157,7 +157,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 9efccf90bbd7e294ebcb4b5b2d81fd12
-  position: {x: 917.59985, y: 1161.76}
+  position: {x: 912.80005, y: 1074.4}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -460,7 +460,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ac0b213c994a9fa4280fcd07c38fbcbf
-  position: {x: 705.1421, y: 333.69888}
+  position: {x: 599.99994, y: 381.59995}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -489,7 +489,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   range: {fileID: 0}
-  baseFace: -1
+  dire: {x: -1, y: 0}
   speed: 45
   time: 0.08
   followYAxis: 0
@@ -792,13 +792,13 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 7b8e67b1f144e984884904644b0d00b2
-  position: {x: 1076.32, y: 752.7999}
+  position: {x: 1076, y: 752}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
   range: {fileID: 0}
-  baseFace: -1
+  dire: {x: -1, y: 0}
   speed: 40
   time: 0.75
   followYAxis: 0

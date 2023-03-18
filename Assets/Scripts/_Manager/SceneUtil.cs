@@ -11,6 +11,11 @@ public class SceneUtil : MonoSingleton<SceneUtil>
         base.Awake();     
         DontDestroyOnLoad(this.gameObject);
     }
+    //返回主菜单
+    public void MainMenu()
+    {
+        StartCoroutine(GoMainMenu());
+    }
     //指定转移
     public void TransScene(string sceneName, int targetId)
     {
@@ -37,5 +42,10 @@ public class SceneUtil : MonoSingleton<SceneUtil>
             }
         }
         Debug.LogError("没有找到目的地");
+    }
+    IEnumerator GoMainMenu()
+    {
+        yield return UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("MainMenu");
+        Time.timeScale = 1f;//初始化时间尺度
     }
 }

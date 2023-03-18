@@ -24599,7 +24599,6 @@ MonoBehaviour:
   high: 2.5
   centerOffset: {x: -0.09, y: -0.22, z: 0}
   minDistance: 1
-  player: {fileID: 0}
 --- !u!114 &7819557398129667178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24833,6 +24832,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9056592169766334333}
   - component: {fileID: 9056592169766334307}
+  - component: {fileID: 9015581930195791212}
+  - component: {fileID: 2694979845270229275}
   m_Layer: 8
   m_Name: Trigger
   m_TagString: Untagged
@@ -24865,7 +24866,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.06997669, y: 0.3998661}
   m_SpriteTilingProperty:
@@ -24880,3 +24881,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5798061, y: 1.8397183}
   m_EdgeRadius: 0
+--- !u!114 &9015581930195791212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9056592169766334334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a293cf39b1948d6be6895fe87df033c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  damage: 10
+--- !u!249 &2694979845270229275
+AreaEffector2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9056592169766334334}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
+  m_ForceMagnitude: 10
+  m_ForceVariation: 0
+  m_ForceTarget: 0
+  m_Drag: 0
+  m_AngularDrag: 0

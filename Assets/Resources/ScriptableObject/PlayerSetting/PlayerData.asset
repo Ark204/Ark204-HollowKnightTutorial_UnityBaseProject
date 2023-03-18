@@ -16,5 +16,5 @@ MonoBehaviour:
     maxHp: 50
     maxEnerge: 10
     attackPower: 1
-  HP: 40
-  Energe: 10
+  HP: 50
+  Energe: 4

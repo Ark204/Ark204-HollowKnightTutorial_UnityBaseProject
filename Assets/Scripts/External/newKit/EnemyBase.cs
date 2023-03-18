@@ -15,9 +15,9 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] Instantiator instantiator;
     [System.NonSerialized] public RecoveryCounter recoveryCounter;
 
-    [Header ("Properties")]
-    [SerializeField] private GameObject deathParticles;
-    [SerializeField] private int health = 3;
+    //[Header ("Properties")]
+    //[SerializeField] private GameObject deathParticles;
+    //[SerializeField] private int health = 3;
     public AudioClip hitSound;
     public bool isBomb;
     [SerializeField] bool requirePoundAttack; //Requires the player to use the down attack to hurt
@@ -31,10 +31,10 @@ public class EnemyBase : MonoBehaviour
 
     void Update()
     {
-        if (health <= 0)
-        {
-            Die();
-        }
+        //if (health <= 0)
+        //{
+        //    Die();
+        //}
     }
 
     //public void GetHurt(int launchDirection, int hitPower)
@@ -93,11 +93,11 @@ public class EnemyBase : MonoBehaviour
         //}
 
         //NewPlayer.Instance.cameraEffects.Shake(200, 1);
-        health = 0;
-        deathParticles.SetActive(true);
-        deathParticles.transform.parent = transform.parent;
-        instantiator.InstantiateObjects();
-        Time.timeScale = 1f;
-        Destroy(gameObject);
+        //health = 0;
+        //deathParticles.SetActive(true);
+        //deathParticles.transform.parent = transform.parent;
+        //instantiator.InstantiateObjects();
+        //Time.timeScale = 1f;
+        //Destroy(gameObject);
     }
 }

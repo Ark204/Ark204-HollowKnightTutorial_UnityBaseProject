@@ -5,7 +5,7 @@ using UnityEngine;
 public class InputManager : MonoSingleton<InputManager>
 {
     public InputHandler inputHandler;
-    [SerializeField] public  GameObject inputSetUI;
+    //[SerializeField] public  GameObject inputSetUI;
     protected override void Awake()
     {
         base.Awake();
@@ -25,24 +25,25 @@ public class InputManager : MonoSingleton<InputManager>
     public Dictionary<string,KeyPair> inputSystemDic=new Dictionary<string, KeyPair>();
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (inputSetUI.activeSelf == false) { inputSetUI.SetActive(true); Time.timeScale = 0; }
-            else 
-            {
-                inputHandler.JosnSave(inputHandler.name,true);
-                inputSetUI.SetActive(false); //关闭UI
-                Time.timeScale = 1; //还原时间尺度
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-#if UNITY__EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#endif
-            Application.Quit();
-        }
+//        if (Input.GetKeyDown(KeyCode.Escape))
+//        {
+//            if (inputSetUI.activeSelf == false) { inputSetUI.SetActive(true); Time.timeScale = 0; }
+//            else 
+//            {
+//                inputHandler.JosnSave(inputHandler.name,true);
+//                inputSetUI.SetActive(false); //关闭UI
+//                Time.timeScale = 1; //还原时间尺度
+//            }
+//        }
+//        if (Input.GetKeyDown(KeyCode.Alpha6))
+//        {
+//#if UNITY__EDITOR
+//            UnityEditor.EditorApplication.isPlaying = false;
+//#endif
+//            Application.Quit();
+//        }
     }
+    //GetAxis
     public static float GetAxisRaw(string axisName)
     {
         float axis=0f;

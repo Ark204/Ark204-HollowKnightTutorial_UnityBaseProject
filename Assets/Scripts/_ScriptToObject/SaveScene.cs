@@ -6,13 +6,35 @@ using UnityEngine;
 public class SaveScene : BSaveData
 {
     public string sceneName = null;
-    public int targetId;//目标点ID
+    public int targetId=1;//目标点ID
+    //Util
+    public void MainMenu()
+    {
+        SceneUtil.Instance.MainMenu();//回到主菜单
+    }
+    //指定转移
+    public void TransScene(string sceneName, int targetId)
+    {
+        SceneUtil.Instance.TransScene(sceneName, targetId);
+    }
+    //回到存档点
+    public void TransScene()
+    {
+        SceneUtil.Instance.TransScene(sceneName, targetId);
+    }
+    //Save about
     protected override void OnLoad()
     {
         //读取磁盘数据
         if (PlayerPrefs.HasKey(this.name))
         {
             JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(this.name), sceneName);
+        }
+        else
+        {
+            //初始化数据
+            sceneName = "scene1";
+            targetId = 1;
         }
     }
     protected override void OnSave() { }

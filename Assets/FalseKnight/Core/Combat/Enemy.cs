@@ -82,7 +82,8 @@ namespace Core.Combat
                 EffectManager.Instance.PlayOneShot(customDeathParticles, transform.position + Vector3.up * 0.5f);
 
             // Minor camera shake
-            CameraController.Instance.ShakeCamera(0.05f, 0.5f);
+            //CameraController.Instance.ShakeCamera(0.05f, 0.5f);
+            CameraEffects.Instance.Shake(10f, 0.5f);
 
             if (destroyOnDeath)
                 Destroy(gameObject);

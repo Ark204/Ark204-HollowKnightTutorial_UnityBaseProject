@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32b8e76b2bbd654bae21fa82bc11998, type: 3}
   m_Name: Key
   m_EditorClassIdentifier: 
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: dfd6599a6821a48658ed281cdc7bbec5, type: 3}
+  displayName: "\u94A5\u5319"
   describe: "\u4E00\u628A\u94A5\u5319\uFF0C\u53EF\u4EE5\u7528\u6765\u5F00\u95E8"

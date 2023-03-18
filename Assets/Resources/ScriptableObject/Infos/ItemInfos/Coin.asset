@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32b8e76b2bbd654bae21fa82bc11998, type: 3}
   m_Name: Coin
   m_EditorClassIdentifier: 
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 4815cf2442b234125bb98deb0e304fc3, type: 3}
+  displayName: "\u94C1\u5E01"
   describe: "\u94C1\u5E01"

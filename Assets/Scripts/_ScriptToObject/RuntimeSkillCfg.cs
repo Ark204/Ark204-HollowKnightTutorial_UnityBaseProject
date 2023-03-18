@@ -21,9 +21,10 @@ using UnityEngine;
 public class RuntimeSkillCfg : BSaveData
 {
     [SerializeField] List<RSkillEntity>  m_rSkillCfgs=new List<RSkillEntity>();
-    Dictionary<int, RSkillEntity> m_rSkillCfgMap;
-    //技能Id与技能数据组成的映射表
-     public Dictionary<int, RSkillEntity> RSkillCfgMap
+    [System.NonSerialized] Dictionary<int, RSkillEntity> m_rSkillCfgMap;
+     [SerializeField] List<RSkillInfo> defaultInfo;//自带的默认初始技能    
+    //技能Id与技能数据组成的映射表（运行时数据、延迟初始化）
+    public Dictionary<int, RSkillEntity> RSkillCfgMap
     {
         get
         {
@@ -35,22 +36,34 @@ public class RuntimeSkillCfg : BSaveData
         }
     }
 
+    public RSkillInfo[] GetItems()
+    {
+        RSkillInfo[] ps = new RSkillInfo[RSkillCfgMap.Count];
+        int i = 0;
+        foreach(var pair in RSkillCfgMap)//遍历字典
+        {
+            ps[i] = pair.Value.RSkillInfo;//将技能逻辑信息赋予
+            i++;//index增加
+        }
+        return ps;
+    }
+
     public void AddSkill(RSkillInfo info)
     {
-        if (m_rSkillCfgMap.ContainsKey(info.Id)) { Debug.Log("已有该技能，无法重复添加");  return; }
+        if (RSkillCfgMap.ContainsKey(info.Id)) { Debug.Log("已有该技能，无法重复添加");  return; }
         var skillEntity = info.CreatEntity();
-        m_rSkillCfgMap.Add(info.Id, skillEntity);//添加技能于表中
+        RSkillCfgMap.Add(info.Id, skillEntity);//添加技能于表中
         m_rSkillCfgs.Add(skillEntity);//添加技能于数组中
     }
 
     public void SubCD(float time)
     {
-        foreach (var elem in m_rSkillCfgMap)
+        foreach (var elem in RSkillCfgMap)
         {
             if(elem.Value.LastCdTime>0) elem.Value.LastCdTime -= time;//若CD大于零，则减少CD
         }
     }
-    void Init()
+    void Init()//初始化技能表
     {
         m_rSkillCfgMap = new Dictionary<int, RSkillEntity>();
         foreach (var elem in m_rSkillCfgs)
@@ -58,12 +71,33 @@ public class RuntimeSkillCfg : BSaveData
             m_rSkillCfgMap.Add(elem.Id, elem);
         }
     }
-    private void Awake()
+
+    protected override void OnSave() { }//初始化 
+
+    protected override void OnLoad() 
     {
-        Init();
+        //读取磁盘数据
+        if (PlayerPrefs.HasKey(this.name))
+        {
+            //从磁盘读取技能列表
+            //JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(this.name),this);
+            m_rSkillCfgs = JsonUtility.FromJson<SerializationList<RSkillEntity>>(PlayerPrefs.GetString(this.name)).ToList();
+        }
+        else//空档
+        {
+            m_rSkillCfgs = new List<RSkillEntity>();//创建空列表
+            RSkillCfgMap.Clear();//清空表
+            //添加默认初始技能
+            foreach (var elem in defaultInfo)
+            {
+                AddSkill(elem);//添加
+            }
+        }
     }
 
-    protected override void OnSave() { }
-
-    protected override void OnLoad() { }
+    protected override KeyValuePair<string, string> GetSaveString()
+    {
+        // return new KeyValuePair<string, string>(this.name, JsonUtility.ToJson(this, true));
+        return new KeyValuePair<string, string>(this.name, JsonUtility.ToJson(new SerializationList<RSkillEntity>(m_rSkillCfgs), true));
+    }
 }

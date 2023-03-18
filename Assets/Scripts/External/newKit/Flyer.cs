@@ -12,7 +12,7 @@ public class Flyer : MonoBehaviour
     [SerializeField] private GameObject bomb;
     [System.NonSerialized] public EnemyBase enemyBase;
     [SerializeField] RangeTarget getPlayer;//提供范围内检测目标
-    [SerializeField] Core.Hazards.Hazard selfTrigger;//自身碰撞触发器
+    //[SerializeField] DestoryTri selfTrigger;//自身碰撞触发器
     private Transform lookAtTarget; //If I'm a bomb, I will point to a transform, like the player
 
     [Header ("Ground Avoidance")]
@@ -47,7 +47,7 @@ public class Flyer : MonoBehaviour
         getPlayer.onTargetEnter += OnTargetEnter;
         getPlayer.onTargetExit += OnTargetExit;
 
-        selfTrigger.onHazardDestory += () => { enemyBase.Die(); };
+        //selfTrigger.onDestory += () => { enemyBase.Die(); };
         //if (enemyBase.isBomb)
         //{
         //    lookAtTarget = NewPlayer.Instance.gameObject.transform;//TODO:GetPlayerTransform as target

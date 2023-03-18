@@ -11,8 +11,11 @@ public class AttackTrigger : MonoBehaviour
     [SerializeField] float durTime=1f;//存在时间
     float exitTime;//已存在时间
     [SerializeField] [Range(0,1)]List<float> triggerPoints;//触发节点
+
+    Collider2D m_collider2D;
     private void Start()
     {
+        m_collider2D = GetComponent<Collider2D>();
         //遍历每个节点
         foreach (var elem in triggerPoints)
             StartCoroutine(TQueueExtion.DelayFunc(InvokePoint, durTime * elem));//实际触发时间=总时间*节点位置
@@ -23,9 +26,8 @@ public class AttackTrigger : MonoBehaviour
     }
     void InvokePoint()//触发节点
     {
-        var colldier = GetComponent<Collider2D>();
         List<Collider2D> collider2Ds=new List<Collider2D>();
-        if(colldier.OverlapCollider(contactFilter2D, collider2Ds)>0)//检测范围内的所有物体
+        if(m_collider2D.OverlapCollider(contactFilter2D, collider2Ds)>0)//检测范围内的所有物体
         {
             foreach(var elem in collider2Ds)
             {

@@ -122,6 +122,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         
         m_runtimeSkillCfg.SubCD(Time.deltaTime);//调用减CD
         //if (!CanBeHit) return;//受伤无敌状态 直接返回
+        if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) return;//有UI打开，直接返回
         if (skillManager.currSkill == null)
         {
             if (Input.GetKey(InputManager.Instance.inputSystemDic["attackKey"])) skillManager.UseSkill(0);
@@ -362,7 +363,8 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         Hp -= damage;//扣血
 
         float shakeIntensity = 0.5f;
-        camController.ShakeCamera(shakeIntensity);//相机抖动
+        //camController.ShakeCamera(shakeIntensity);//相机抖动
+        CameraEffects.Instance.Shake(shakeIntensity*200);
 
         if (Hp <= 0)//血量低于等于0=>死亡
         {
@@ -381,7 +383,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         StartCoroutine(TQueueExtion.DelayFunc(()=> { EnableMoveCtrl = true; }, hitProtectionDuration/2));//持续时间后移除
 
         Instantiate(hurtFlashObject, transform.position, Quaternion.identity);//受伤特效
-        GuiManager.Instance.FadeHurtVignette(vignetteIntensity);//不知道
+        //GuiManager.Instance.FadeHurtVignette(vignetteIntensity);//受击背景
         GameManager.Instance.FreezeTime(0.02f);//冻结时间
 
         

@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 719a760281af9194c8bacba91b34283a
-  position: {x: -887.27893, y: 481.6}
+  position: {x: -1556.3464, y: 456.657}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -37,15 +37,16 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d04ff228da529894fa2d9c3f71716e36
-  position: {x: -840.17706, y: 265.59998}
+  position: {x: -859.5463, y: 239.85703}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
   children:
+  - {fileID: -8730270911297867545}
   - {fileID: 1277871553038699791}
   - {fileID: 7964538665249431209}
-  - {fileID: -8730270911297867545}
+  - {fileID: -1235474074547333367}
   - {fileID: -2700864807445889917}
   - {fileID: 2271119133688631839}
   - {fileID: -1509830634214166940}
@@ -89,7 +90,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d124aa52b5522dd49b05bb069da4abcc
-  position: {x: -701.7771, y: 482.4}
+  position: {x: -721.1463, y: 457.45694}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -131,12 +132,34 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 7724170fc061b6b4c9ec6a8299d40817
-  position: {x: -307.2, y: 481.6}
+  position: {x: -365.14624, y: 457.45694}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
   duration: 1
+--- !u!114 &-1235474074547333367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f034acea819fa4aa46e7ac0f9c8a7a, type: 3}
+  m_Name: ChangeColor
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: a2cb78ccbee3b6945abca40591dedc78
+  position: {x: -898.7464, y: 455.857}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  drawGizmos: 0
+  range: {fileID: 0}
+  color: {r: 1, g: 0, b: 0.7063656, a: 1}
 --- !u!114 &-1190856729132468538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +175,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 31ead5d02dae7c24c90a83c06e37ca8e
-  position: {x: -344.52505, y: -357.85376}
+  position: {x: -491.63303, y: -213.6}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -179,6 +202,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   children:
+  - {fileID: 261808400312988453}
   - {fileID: -7490888648538982279}
   - {fileID: 7625963765348380707}
 --- !u!114 &11400000
@@ -210,8 +234,32 @@ MonoBehaviour:
   - {fileID: -8132588520775156463}
   - {fileID: -1509830634214166940}
   - {fileID: 7964538665249431209}
+  - {fileID: 261808400312988453}
+  - {fileID: -1235474074547333367}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &261808400312988453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f034acea819fa4aa46e7ac0f9c8a7a, type: 3}
+  m_Name: ChangeColor
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 81ad3c29e38a30e47859f27f36389351
+  position: {x: -111.99994, y: 464.8}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  drawGizmos: 0
+  range: {fileID: 0}
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1277871553038699791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +275,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 82a9d6a0114dd5e45925b738c6ae4796
-  position: {x: -1327.7412, y: 482.40002}
+  position: {x: -1347.5464, y: 457.45694}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -249,15 +297,15 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 466bcc680db465343a48e17dae46d6d9
-  position: {x: -520.1772, y: 482.4}
+  position: {x: -539.5463, y: 457.45694}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
   range: {fileID: 0}
-  baseFace: 1
-  speed: 15
-  time: 0.2
+  dire: {x: 1, y: 0}
+  speed: 10
+  time: 0.3
   followYAxis: 0
   stopDistanceFromWall: 0
 --- !u!114 &3052225502096794863
@@ -342,7 +390,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: bfe9736be334d044e8c5c5a79bacfcfb
-  position: {x: -1115.5887, y: 481.59998}
+  position: {x: -1134.7463, y: 456.657}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 

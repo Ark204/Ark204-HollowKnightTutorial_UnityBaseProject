@@ -24,8 +24,9 @@ public class EJump : ActionNode
         jumpTween=DG.Tweening.DOVirtual.DelayedCall(jumpTime, () =>
          {
              hasLanded = true;
-             if (shakeCameraOnLanding)
-                 Core.Character.CameraController.Instance.ShakeCamera(0.5f);
+             if (shakeCameraOnLanding) CameraEffects.Instance.Shake(100f, 1f);
+             //Core.Character.CameraController.Instance.ShakeCamera(0.5f);
+
          },false);
     }
     protected override State OnUpdate() {

@@ -1,48 +1,34 @@
 ﻿using Core.Character;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace Core.Hazards
 {
+    //接触造成伤害
     public class Hazard : MonoBehaviour
     {
-        public int damage = 1;
-        [SerializeField] bool destoryAfterTrigger=false;//是否在触发后进行自我销毁\
-        [SerializeField] float lifeTime=5f;//最长生存时间
-        float startTime;
-        public event System.Action onHazardDestory;
-        private void Start()
+        [SerializeField] LayerMask triggerLayer;//关注的触发层
+        [SerializeField] int damage = 10;
+        private void OnTriggerEnter2D(Collider2D collider)
         {
-            startTime = Time.fixedTime;
-        }
-        private void Update()
-        {
-            if (destoryAfterTrigger&&Time.fixedTime - startTime > lifeTime)
+            if ((triggerLayer.value & 1 << collider.gameObject.layer) < 0) return;//不在关注层中 返回
+            PlayerCtrl player = collider.GetComponent<PlayerCtrl>();//尝试获取玩家
+            if (player != null) { player.Hurt(damage, Vector2.zero); return; }//造成伤害
+            else
             {
-                onHazardDestory?.Invoke();
-                Destroy(gameObject);//只能销毁自身，父物体依旧存在
+                BeAttackedable attackedable = collider.GetComponent<BeAttackedable>();//尝试获取怪物
+                if (attackedable != null) attackedable.OnAttackHit(Vector2.zero, Vector2.zero, damage);//造成伤害
             }
         }
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerStay2D(Collider2D collider)
         {
-            CheckCollision(collision.gameObject);
-            if (destoryAfterTrigger&&collision.CompareTag("Player"))
+            if ((triggerLayer.value & 1 << collider.gameObject.layer) < 0) return;//不在关注层中 返回
+            PlayerCtrl player = collider.GetComponent<PlayerCtrl>();//尝试获取玩家
+            if (player != null) { player.Hurt(damage, Vector2.zero); return; }//造成伤害
+            else
             {
-                onHazardDestory?.Invoke();
-                Destroy(gameObject);//只能销毁自身，父物体依旧存在
-            }
-        }
-        private void CheckCollision(GameObject collider)
-        {
-            if (collider.CompareTag("Player"))
-            {
-                var player = collider.GetComponent<PlayerCtrl>();
-                if (!player.CanBeHit) return;
-
-                var recoilDirection = (collider.transform.position - transform.position).normalized;
-                //float multiplier = recoilDirection.y < 0 ? 1.0f : 500.0f;
-                //Vector2 recoilForce = recoilDirection * multiplier;
-
-                player.Hurt(damage,Vector2.zero /*recoilForce*/, killRecoil: false);
+                BeAttackedable attackedable = collider.GetComponent<BeAttackedable>();//尝试获取怪物
+                if (attackedable != null) attackedable.OnAttackHit(Vector2.zero, Vector2.zero, damage);//造成伤害
             }
         }
     }

@@ -81,7 +81,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6906555391789545761
 Transform:
   m_ObjectHideFlags: 0
@@ -350,6 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7853528239427050905}
   - component: {fileID: 7853528239427050911}
+  - component: {fileID: 1112025687188539747}
   - component: {fileID: 7853528239427050910}
   m_Layer: 8
   m_Name: Trigger
@@ -383,7 +384,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.014885426, y: 0.028607845}
   m_SpriteTilingProperty:
@@ -398,6 +399,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3421926, y: 2.6586618}
   m_EdgeRadius: 0
+--- !u!249 &1112025687188539747
+AreaEffector2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7853528239427050904}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
+  m_ForceMagnitude: 10
+  m_ForceVariation: 0
+  m_ForceTarget: 0
+  m_Drag: 0
+  m_AngularDrag: 0
 --- !u!114 &7853528239427050910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a293cf39b1948d6be6895fe87df033c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerLayer:
+    serializedVersion: 2
+    m_Bits: 64
   damage: 10
-  destoryAfterTrigger: 0
-  lifeTime: 5

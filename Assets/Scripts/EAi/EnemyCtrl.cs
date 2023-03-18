@@ -41,11 +41,6 @@ public class EnemyCtrl : MonoBehaviour
     {
         m_animator.SetBool("isMoving", true);
     }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q)) Test();
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -73,14 +68,5 @@ public class EnemyCtrl : MonoBehaviour
         if (Hp <= 0) Destroy(this.gameObject);//ËÀÍö
         // GetComponent<Rigidbody2D>().velocity = arg2;//»÷ÍË
         m_transform.Translate(arg2);
-    }
-    //test use
-    public PlayerCtrl player;
-    public void Test() 
-    {
-         Vector3 force=player.transform.position - transform.position;
-        force=force.normalized*pushPower;
-        Debug.Log("force:  "+force);
-        player.Hurt(1, force);
     }
 }

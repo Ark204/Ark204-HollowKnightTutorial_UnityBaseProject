@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: UpSwingInfo
   m_EditorClassIdentifier: 
   m_Icon: {fileID: 2800000, guid: 7092324b93851a14c858530cca4a6b26, type: 3}
-  describe: "\u4E0A\u6311\uFF0C\u5728\u7A7A\u4E2D\u53EA\u80FD\u4F7F\u7528\u4E00\u6B21\uFF0C\u843D\u5730\u540E\u91CD\u7F6E"
+  displayName: "\u4E0A\u6311"
+  describe: "\u5728\u7A7A\u4E2D\u53EA\u80FD\u4F7F\u7528\u4E00\u6B21\uFF0C\u843D\u5730\u540E\u91CD\u7F6E"
   m_id: 6
   m_cdTimee: 0

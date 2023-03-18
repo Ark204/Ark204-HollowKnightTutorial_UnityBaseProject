@@ -45,6 +45,7 @@ public class KeyCodeSet : MonoBehaviour
             {
                 foreach (KeyCode keycode in Enum.GetValues(typeof(KeyCode)))
                 {
+                    if (keycode == KeyCode.Escape) continue;
                     if (Input.GetKeyDown(keycode))
                     {
                         ChangingKey.GetComponentInChildren<Text>().text = keycode.ToString();  //¸ÄUIÏÔÊ¾

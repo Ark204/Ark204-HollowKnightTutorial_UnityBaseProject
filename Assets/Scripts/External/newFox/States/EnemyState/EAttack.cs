@@ -34,8 +34,8 @@ public class EAttack : StateMachineBehaviour
         var force = new Vector2(weapon.horizontalForce * direct, weapon.verticalForce);
         projectile.AddForce(force);//.SetForce(force);
         //»­ÃæÕð¶¯
-        if (shakeCamera)
-            CameraController.Instance.ShakeCamera(0.5f);
+        if (shakeCamera) CameraEffects.Instance.Shake(100f, 1f);
+        //CameraController.Instance.ShakeCamera(0.5f);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

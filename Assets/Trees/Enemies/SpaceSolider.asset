@@ -142,7 +142,7 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  target: {fileID: 0}
+  range: {fileID: 0}
   color: {r: 0.23929572, g: 1, b: 0, a: 1}
 --- !u!114 &-3822870471996717838
 MonoBehaviour:
@@ -208,7 +208,7 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  target: {fileID: 0}
+  range: {fileID: 0}
   baseFace: -1
 --- !u!114 &-2007859420676349690
 MonoBehaviour:
@@ -254,8 +254,8 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  target: {fileID: 0}
-  baseFace: -1
+  range: {fileID: 0}
+  dire: {x: 1, y: 0}
   speed: 45
   time: 0.16
   followYAxis: 0
@@ -340,7 +340,7 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  target: {fileID: 0}
+  range: {fileID: 0}
   distance: 4
   radius: 12
   offsetY: 0.37
@@ -366,7 +366,7 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  target: {fileID: 0}
+  range: {fileID: 0}
   distance: 4
   radius: 12
   offsetY: 0
@@ -508,7 +508,7 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  target: {fileID: 0}
+  range: {fileID: 0}
   color: {r: 1, g: 0, b: 0.8154073, a: 1}
 --- !u!114 &8438033958644861262
 MonoBehaviour:
@@ -551,5 +551,5 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  target: {fileID: 0}
+  range: {fileID: 0}
   baseFace: -1

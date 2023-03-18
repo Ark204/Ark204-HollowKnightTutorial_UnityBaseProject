@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayer: 6
+  target: {fileID: 0}
 --- !u!58 &8869304167774401247
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -80,6 +81,7 @@ GameObject:
   - component: {fileID: 8869304168173503956}
   - component: {fileID: 8869304168173503957}
   - component: {fileID: 8869304168173503954}
+  - component: {fileID: 352928597172355120}
   m_Layer: 8
   m_Name: EliteShield
   m_TagString: Untagged
@@ -384,12 +386,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bomb: {fileID: 0}
   getPlayer: {fileID: 8869304167774401244}
-  selfTrigger: {fileID: 2634772642225795249}
+  selfTrigger: {fileID: 8665840296558347513}
   rayCastWidth: 5
   rayCastOffsetY: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   avoidGround: 0
   maxSpeedDeviation: 0
   easing: 1
@@ -399,6 +401,19 @@ MonoBehaviour:
   speedMultiplier: 16
   shootsBomb: 0
   targetOffset: {x: 0, y: 0}
+--- !u!114 &352928597172355120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869304168173503953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a88be4becd0b8438636cd17e9063f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableTime: 4
 --- !u!1 &8869304168486937171
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +424,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8869304168486937170}
   - component: {fileID: 8869304168486937172}
+  - component: {fileID: 4398765819113909003}
   - component: {fileID: 2634772642225795249}
+  - component: {fileID: 8665840296558347513}
   m_Layer: 8
   m_Name: Trigger
   m_TagString: Untagged
@@ -442,7 +459,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.16458586, y: 0.018633187}
   m_SpriteTilingProperty:
@@ -457,6 +474,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.55802673, y: 1.1781691}
   m_EdgeRadius: 0
+--- !u!249 &4398765819113909003
+AreaEffector2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869304168486937171}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 192
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 0
+  m_ForceMagnitude: 10
+  m_ForceVariation: 0
+  m_ForceTarget: 0
+  m_Drag: 0
+  m_AngularDrag: 0
 --- !u!114 &2634772642225795249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,8 +506,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a293cf39b1948d6be6895fe87df033c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   damage: 1
-  destoryAfterTrigger: 1
+--- !u!114 &8665840296558347513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869304168486937171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e2263395dabc71498b6a74b0d872134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerLayer:
+    serializedVersion: 2
+    m_Bits: 192
+  destoryObj: {fileID: 0}
 --- !u!1001 &8869304168785247288
 PrefabInstance:
   m_ObjectHideFlags: 0

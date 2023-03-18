@@ -14,9 +14,14 @@ public abstract class BSaveData : ScriptableObject
     {
         return default(KeyValuePair<string, string>);
     }
+    protected virtual void Awake()
+    {
+        if (!saveDatas.Contains(this)) saveDatas.Add(this);
+    }
     protected virtual void OnEnable()
     {
         if (!saveDatas.Contains(this)) saveDatas.Add(this);
+        OnLoad();//调用加载
     }
     protected virtual void OnDestroy()
     {
@@ -41,7 +46,10 @@ public abstract class BSaveData : ScriptableObject
         }
         //遍历获取string
         foreach (var elem in saveDatas)
-        { PlayerPrefs.SetString(elem.GetSaveString().Key, elem.GetSaveString().Value); }
+        {
+            var pair = elem.GetSaveString();//获取键值对
+            PlayerPrefs.SetString(pair.Key, pair.Value);//设置键值对 
+        }
         PlayerPrefs.Save();//统一保存
     }
     //用于遍历初始化所有静态数据
@@ -50,6 +58,14 @@ public abstract class BSaveData : ScriptableObject
         foreach (var elem in saveDatas)
             elem.OnLoad();
     }
-    
-
+    //删除存档数据
+    public static void DeleteAll()
+    {
+        foreach (var elem in saveDatas)
+        {
+            var pair = elem.GetSaveString();//获取键值对
+            if(PlayerPrefs.HasKey(pair.Key)) PlayerPrefs.DeleteKey(pair.Key);//删除键值对 
+        }
+        PlayerPrefs.Save();//统一保存
+    }
 }

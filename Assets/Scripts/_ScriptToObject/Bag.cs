@@ -50,22 +50,36 @@ public class Bag : BSaveData
         }
         return false;//找不到
     }
+    //Save About
     protected override void OnLoad()
     {
         //读取磁盘数据
         if (PlayerPrefs.HasKey(this.name))
         {
-            items = JsonUtility.FromJson<Bag>(PlayerPrefs.GetString(this.name)).items;
+            //反序列化出List
+            items=JsonUtility.FromJson<SerializationList<ItemEntity>>(PlayerPrefs.GetString(this.name)).ToList();
         }
-        else
+        else//空档
         {
-            items = new List<ItemEntity>();
+            items = new List<ItemEntity>();//创建空列表
         }
     }
 
     protected override void OnSave() { }
     protected override KeyValuePair<string, string> GetSaveString()
     {
-        return new KeyValuePair<string, string>(this.name, JsonUtility.ToJson(this, true));
+        //存储列表
+        return new KeyValuePair<string, string>(this.name, JsonUtility.ToJson(new SerializationList<ItemEntity>(items), true));
     }
+}
+
+public class SerializationList<T>
+{
+    [SerializeField] List<T> targetList;
+    public List<T> ToList (){ return targetList; }
+    public SerializationList(List<T> target)
+    {
+        targetList = target;
+    }
+
 }

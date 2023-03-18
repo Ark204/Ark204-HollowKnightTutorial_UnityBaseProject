@@ -20,6 +20,7 @@ using System;
         return currKeyCode.ToString();
     }
 }
+//按键设置，独立于存档数据外
 [CreateAssetMenu(fileName = "New PlayerInputSetting", menuName = "PlayerInputSetting")]
 public class InputHandler :ScriptableObject
 {
@@ -49,5 +50,9 @@ public class InputHandler :ScriptableObject
     private void OnDestroy()
     {
         this.JosnSave(name, true);   
+    }
+    public void JosnSave()
+    {
+        this.JosnSave(name, true);
     }
 }

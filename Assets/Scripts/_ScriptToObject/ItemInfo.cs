@@ -5,9 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New ItemInfo", menuName = "ScriptableObjct/物品数据", order = 0)]
 public class ItemInfo : ScriptableObject
 {
-    [SerializeField] UnityEngine.UI.Image m_Icon;//图标
+    [SerializeField] Texture2D m_Icon;//图标
+    [SerializeField] string displayName;//在UI上显示的名称
     [SerializeField] string describe;//物品描述
-    public UnityEngine.UI.Image Icon { get => m_Icon; }
+    public Texture2D Icon { get => m_Icon; }
+    public string DisplayName { get => displayName; }
     public string Describe { get => describe; }
     public ItemEntity CreatEntity(uint count=1)
     {

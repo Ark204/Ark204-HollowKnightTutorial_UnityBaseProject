@@ -416,7 +416,8 @@ namespace Core.Character
         
         public void Concuss()
         {
-            camController.ShakeCamera(0.3f);
+            //camController.ShakeCamera(0.3f);
+            CameraEffects.Instance.Shake(60f);
         }
 
         public void Stun()

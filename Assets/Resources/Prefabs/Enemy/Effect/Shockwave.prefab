@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7651466361770818259}
   - component: {fileID: 6269478105952539978}
   - component: {fileID: -4583159823854434681}
+  - component: {fileID: -8320072256722824157}
   m_Layer: 8
   m_Name: Shockwave
   m_TagString: Untagged
@@ -147,6 +148,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a293cf39b1948d6be6895fe87df033c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerLayer:
+    serializedVersion: 2
+    m_Bits: 64
   damage: 10
-  destoryAfterTrigger: 1
-  lifeTime: 5
+--- !u!114 &-8320072256722824157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6283611235122714579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a88be4becd0b8438636cd17e9063f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableTime: 5

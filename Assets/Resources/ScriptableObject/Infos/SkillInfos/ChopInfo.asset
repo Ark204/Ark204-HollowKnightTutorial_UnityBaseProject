@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3598d5743206e3c4d8b8382bff65be65, type: 3}
   m_Name: ChopInfo
   m_EditorClassIdentifier: 
-  m_Icon: {fileID: 0}
-  describe: "\u8FDE\u7EED\u65A9\u52075\u6B21\uFF0C\u6BCF\u6B21\u547D\u4E2D\u53EF\u4EE5\u6062\u590D3\u70B9\u4F53\u529B"
+  m_Icon: {fileID: 2800000, guid: 2d089513ae4adfc48a683c362ad9992c, type: 3}
+  displayName: "\u8FDE\u7EED\u65A9\u5207"
+  describe: "\u5411\u524D\u65B9\u65A9\u52075\u6B21\uFF0C\u6BCF\u6B21\u547D\u4E2D\u53EF\u4EE5\u6062\u590D3\u70B9\u4F53\u529B"
   m_id: 11
   m_cdTimee: 0

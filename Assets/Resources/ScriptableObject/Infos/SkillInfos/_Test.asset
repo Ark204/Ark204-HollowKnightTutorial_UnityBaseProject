@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: _Test
   m_EditorClassIdentifier: 
   m_Icon: {fileID: 2800000, guid: 2c04f4986ebc72e48a8b0c3eb2e42db2, type: 3}
+  displayName: "\u6D4B\u8BD5\u6280\u80FD"
   describe: "\u6D4B\u8BD5\u6280\u80FD"
   m_id: 5
   m_cdTimee: 200

@@ -62,8 +62,8 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  target: {fileID: 0}
-  range: 2.5
+  range: {fileID: 0}
+  m_range: 5
 --- !u!114 &-5646654037558127006
 MonoBehaviour:
   m_ObjectHideFlags: 0

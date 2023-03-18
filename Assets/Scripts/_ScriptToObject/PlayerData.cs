@@ -38,7 +38,7 @@ public class PlayerData:BSaveData
         }
         else
         {
-            m_saveData = new SaveData(5, 10, 1);
+            m_saveData = new SaveData(50, 10, 1);//设置初始数据
         }
         //数据初始化
         HP = MaxHp;

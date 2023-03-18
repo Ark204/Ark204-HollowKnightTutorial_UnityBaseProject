@@ -94,7 +94,7 @@ namespace Core.Character
                             _playerController.DoRecoil(recoilForce, true);
 
                             // Minor camera shake
-                            CameraController.Instance.ShakeCamera(0.05f, 0.5f);
+                            CameraEffects.Instance.Shake(10f, 0.5f);
                         }
                         else
                         {
