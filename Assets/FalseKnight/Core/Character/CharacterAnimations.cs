@@ -10,5 +10,6 @@ namespace Core.Character
         public static readonly int Die = Animator.StringToHash("Die");
         public static readonly int Attack = Animator.StringToHash("Attack");
         public static readonly int Dash = Animator.StringToHash("Dash");
+        public static readonly int VelocityY = Animator.StringToHash("vetV");
     }
 }

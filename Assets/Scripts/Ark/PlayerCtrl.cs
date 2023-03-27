@@ -107,15 +107,23 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         moveCtrl.OnLanded += ResetUpswing;//增加监听
         TQueueExtion.OnSkillHurt += TriggerSub;//增加监听
     }
+    //重置上挑
     private void ResetUpswing()
     {
-        useable = true;
+        useable = true;//重置上挑
     }
     protected override void OnDestroy()
     {
         base.OnDestroy();
         moveCtrl.OnLanded -= ResetUpswing;//移除监听
         TQueueExtion.OnSkillHurt -= TriggerSub;//移除监听
+    }
+    private void FixedUpdate()
+    {
+        if(moveCtrl.isOnGround==true&&useableDash==false)//在地面上且冲刺未重置
+        {
+            useableDash = true;//重置冲刺
+        }
     }
     private void Update()
     {
@@ -127,21 +135,21 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         {
             if (Input.GetKey(InputManager.Instance.inputSystemDic["attackKey"])) skillManager.UseSkill(0);
             if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["dashKey"])) Dash();
-            if (Input.GetButtonDown("Replay")) RePlay();
-            if (Input.GetButtonDown("Storage")) skillManager.UseSkill(3);
-            if (Input.GetButtonDown("Cure") && Energe > 0 && moveCtrl.isOnGround) skillManager.UseSkill(4);
-            if (Input.GetButtonDown("Shield") && Energe > 2 && moveCtrl.isOnGround) { skillManager.UseSkill(5); }
+            //if (Input.GetButtonDown("Replay")) RePlay();
+            //if (Input.GetButtonDown("Storage")) skillManager.UseSkill(3);
+            //if (Input.GetButtonDown("Cure") && Energe > 0 && moveCtrl.isOnGround) skillManager.UseSkill(4);
+            //if (Input.GetButtonDown("Shield") && Energe > 2 && moveCtrl.isOnGround) { skillManager.UseSkill(5); }
             if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["upswingKey"])) Upswing();
             if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["cycloneKey"]) && !moveCtrl.isOnGround) Cyclone();
             if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["subductionKey"]) && !moveCtrl.isOnGround) skillManager.UseSkill(8);
-            if (Input.GetKeyDown(KeyCode.Q)) skillManager.UseSkill(9);
-            if (Input.GetKeyDown(KeyCode.H)) NewCure();
-            if(Input.GetKeyDown(KeyCode.LeftShift)) skillManager.UseSkill(10);
-            if (Input.GetKeyDown(KeyCode.R)) Chop();
+            //if (Input.GetKeyDown(KeyCode.Q)) skillManager.UseSkill(9);
+            //if (Input.GetKeyDown(KeyCode.H)) NewCure();
+            if(Input.GetKeyDown(InputManager.Instance.inputSystemDic["substituteKey"])) skillManager.UseSkill(10);
+            if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["chopKey"])) Chop();
         }
-        if (Input.GetButtonUp("Storage")) skillManager.StopSkill(3);
-        if (Input.GetButtonUp("Cure") || Energe <= 0) skillManager.StopSkill(4);
-        if (Input.GetButtonUp("Shield")) skillManager.StopSkill(5);
+        //if (Input.GetButtonUp("Storage")) skillManager.StopSkill(3);
+        //if (Input.GetButtonUp("Cure") || Energe <= 0) skillManager.StopSkill(4);
+        //if (Input.GetButtonUp("Shield")) skillManager.StopSkill(5);
         //if (Input.GetKeyUp(KeyCode.X)) InputHandler.Instance.jumpKey = KeyCode.L;//skillManager.StopSkill(9);
 
     }
@@ -178,13 +186,15 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
     [SerializeField] int m_skillId;
     void NewCure()
     {
+#if UNITY_EDITOR
         if (!m_runtimeSkillCfg.RSkillCfgMap.ContainsKey(m_skillId)) { Debug.Log("尚未获得此技能"); return; }
         var skillCfg = m_runtimeSkillCfg.RSkillCfgMap[m_skillId];
-        if (skillCfg.LastCdTime<=0)//冷却时间为零
+        if (skillCfg.LastCdTime <= 0)//冷却时间为零
         {
             Hp += 1;//用skillManager调用技能
             skillCfg.LastCdTime = skillCfg.CdTime;//重新进入CD
         }
+#endif
     }
     #endregion
 
@@ -201,7 +211,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
     }
     #endregion
 
-    #region upswing
+    #region Upswing
     [SerializeField] int upswingId;
     [SerializeField] bool useable=true;//是否可用
     void Upswing()//上挑
@@ -209,7 +219,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         if (!m_runtimeSkillCfg.RSkillCfgMap.ContainsKey(upswingId)) { Debug.Log("尚未获得此技能"); return; }
         if (!useable) { Debug.Log("未重置"); return; }
         skillManager.UseSkill(6);//用skillManager调用技能
-        useable = false;
+        useable = false;//关闭
     }
     #endregion
 
@@ -259,18 +269,22 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
     public float DashCd { get => dashCd; }
     private float lastUse_dash = -dashCd;//上次使用的时间
     public float LastUse_dash => lastUse_dash;
+    [SerializeField] bool useableDash = true;//是否可用
     //按下Dash后调用此函数
     void Dash()
     {
+        if (!useableDash) { Debug.Log("未重置"); return; }
         //TODO: 处理cd时间与同一时间内其他技能使用冲突
         if (Time.realtimeSinceStartup - lastUse_dash > dashCd)//若现在时间-上次使用时间>cd时间
         {
             skillManager.UseSkill(1);//使用技能
             lastUse_dash = Time.realtimeSinceStartup;//刷新上次使用时间
+            useableDash = false;//关闭
         }
     }
     #endregion
 
+#if UNITY_EDITOR
     #region RePlay
     private const float rePlayCd = 3f;//cd
     private float lastUse_RePlay = -rePlayCd;//上次使用的时间
@@ -284,6 +298,8 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         }
     }
     #endregion
+
+#endif
 
     #region Hurt and Die also Camera and 替身
     // Hit Protection(受击无敌)
@@ -328,7 +344,10 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         skillManager.Interrupt();//中断技能（移除完全静止）
         CanBeHit = false;//进入无敌状态
         StartCoroutine(TQueueExtion.DelayFunc(() => { CanBeHit = true; }, 0.2f));//持续时间后移除
-        Vector2 dir = new Vector2(InputManager.GetAxisRaw("Horizontal"), InputManager.GetAxisRaw("Vertical"));//获取方向向量
+        //获取方向向量
+        float hor = InputManager.GetAxisRaw("Horizontal");
+        float ver = InputManager.GetAxisRaw("Vertical");
+        Vector2 dir = new Vector2(hor, ver);//获取方向向量
         //射线检测目标方向-->瞬移距离=Min(distance,Line)
         Debug.Log(dir);//看看方向
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position + offset, dir, distance, Impenetrable);
@@ -338,6 +357,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
             trueDis = Vector2.Distance(transform.position + offset, hitInfo.point);//真正瞬移距离为当前位置到地形的距离
         }
         transform.position = transform.position + (Vector3)dir.normalized * trueDis;//瞬移
+        lastSkillID = -1;//重置上一次触发的技能ID
         m_runtimeSkillCfg.SubCD(SubTime);//-CD,全体，包括自身
         return true;
     }

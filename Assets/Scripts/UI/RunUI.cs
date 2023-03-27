@@ -11,7 +11,7 @@ public class RunUI : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) gameMenu.OpenUI();//打开游戏内菜单
-        if (Input.GetKeyDown(KeyCode.X)) bag.OpenUI();
-        if (Input.GetKeyDown(KeyCode.C)) skill.OpenUI();
+        if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["bagKey"])) bag.OpenUI();
+        if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["skillMapKey"])) skill.OpenUI();
     }
 }

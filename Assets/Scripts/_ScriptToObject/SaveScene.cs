@@ -28,7 +28,7 @@ public class SaveScene : BSaveData
         //∂¡»°¥≈≈Ã ˝æ›
         if (PlayerPrefs.HasKey(this.name))
         {
-            JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(this.name), sceneName);
+            JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(this.name), this);
         }
         else
         {
@@ -40,7 +40,7 @@ public class SaveScene : BSaveData
     protected override void OnSave() { }
     protected override KeyValuePair<string, string> GetSaveString()
     {
-        return new KeyValuePair<string, string>(this.name, JsonUtility.ToJson(sceneName, true));
+        return new KeyValuePair<string, string>(this.name, JsonUtility.ToJson(this, true));
     }
 
     //static

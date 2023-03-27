@@ -23,6 +23,7 @@ public class RuntimeSkillCfg : BSaveData
     [SerializeField] List<RSkillEntity>  m_rSkillCfgs=new List<RSkillEntity>();
     [System.NonSerialized] Dictionary<int, RSkillEntity> m_rSkillCfgMap;
      [SerializeField] List<RSkillInfo> defaultInfo;//自带的默认初始技能    
+    public event System.Action OnSkillAdd;//技能添加时触发事件 
     //技能Id与技能数据组成的映射表（运行时数据、延迟初始化）
     public Dictionary<int, RSkillEntity> RSkillCfgMap
     {
@@ -54,6 +55,8 @@ public class RuntimeSkillCfg : BSaveData
         var skillEntity = info.CreatEntity();
         RSkillCfgMap.Add(info.Id, skillEntity);//添加技能于表中
         m_rSkillCfgs.Add(skillEntity);//添加技能于数组中
+        //触发事件
+        OnSkillAdd?.Invoke();
     }
 
     public void SubCD(float time)

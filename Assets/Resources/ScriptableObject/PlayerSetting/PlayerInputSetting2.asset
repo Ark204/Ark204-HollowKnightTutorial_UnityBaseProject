@@ -12,12 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8090f6bf6804a4f44820e84b1ad47caa, type: 3}
   m_Name: PlayerInputSetting2
   m_EditorClassIdentifier: 
-  jumpKey: 100
-  dashKey: 32
-  upswingKey: 50
-  subductionKey: 119
-  cycloneKey: 101
-  attackKey: 97
   keyPairs:
   - keyName: upKey
     currKeyCode: 273
@@ -39,3 +33,11 @@ MonoBehaviour:
     currKeyCode: 119
   - keyName: cycloneKey
     currKeyCode: 101
+  - keyName: chopKey
+    currKeyCode: 114
+  - keyName: substituteKey
+    currKeyCode: 304
+  - keyName: bagKey
+    currKeyCode: 106
+  - keyName: skillMapKey
+    currKeyCode: 109

@@ -47,7 +47,7 @@ namespace Core.Character
 
         private float previousPositionX;
         private float previousPositionY;
-        private float acceleration = 1.0f;
+        private float acceleration = 1.0f;//加速度
         private float externalAcceleration = 1.0f;
         private float maxSpeed;
         private float afterJumpCooldown;
@@ -188,19 +188,19 @@ namespace Core.Character
                 body.velocity = Vector2.SmoothDamp(body.velocity, new Vector2(movingVelocityX, body.velocity.y),
                     ref currentVelocity, 0.02f);
 
-            UpdateAcceleration();
-            SetFacing();
-            DoJump();
+            UpdateAcceleration();//更新加速度(似乎不包括竖直方向)
+            SetFacing();//设置朝向
+            DoJump();//实现跳跃
 
             // Artificially limit horizontal and vertical velocity
-            float downwardsLimit = -24.0f;
-            float upwardsLimit = 104.0f;
+            float downwardsLimit = -24.0f;//竖直速度下限
+            float upwardsLimit = 104.0f;//竖直速度上限
             body.velocity = new Vector2(Mathf.Clamp(body.velocity.x, -14.0f, 14.0f),
                 Mathf.Clamp(body.velocity.y, downwardsLimit, upwardsLimit));
 
 
-            HandleFalling();
-            UpdateAnimator();
+            HandleFalling();//处理下落(相机相关)
+            UpdateAnimator();//更新动画机
 
             wasJumping = isJumping;
         }
@@ -324,12 +324,12 @@ namespace Core.Character
             canJump = canJump && isJumping && !wasJumping;
             if (canJump)
             {
-                StartJump();
+                StartJump();//开始跳跃
             }
 
-            if (!isOnGround && !isJumping && body.velocity.y > 0.01f)
+            if (!isOnGround && !isJumping && body.velocity.y > 0.01f)//松开跳跃键时
             {
-                CancelJump();
+                CancelJump();//取消跳跃
             }
         }
 
@@ -339,7 +339,7 @@ namespace Core.Character
             animator.SetTrigger(CharacterAnimations.StartJump);
             isOnGround = false;
 
-            body.AddForce(new Vector2(0, jumpForce));
+            body.AddForce(new Vector2(0, jumpForce));//直接给一个力
 
             afterJumpCooldown = 0.1f;
         }
@@ -377,6 +377,7 @@ namespace Core.Character
         private void UpdateAnimator()
         {
             animator.SetFloat(CharacterAnimations.Speed, Mathf.Abs(movingVelocityX * 1.5f));
+            animator.SetFloat(CharacterAnimations.VelocityY, body.velocity.y * 1.5f);//设置竖直方向速度
         }
 
         /// <summary>

@@ -12,6 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6959a6105eadcd34fa351f1304f81c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &-2146402247700860328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6959a6105eadcd34fa351f1304f81c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,7 +41,8 @@ MonoBehaviour:
   m_skillID: 10
   m_loop: 0
   m_endTime: 0.5
-  startDeles: []
+  startDeles:
+  - {fileID: 8060902336015809926}
   timePoints:
   - effectTime: 0.5
     bDele: {fileID: 6333441211483489057}
@@ -36,6 +51,7 @@ MonoBehaviour:
   stopDeles: []
   exitDeles:
   - {fileID: 7401852923233971802}
+  - {fileID: -2146402247700860328}
   bSkills: []
 --- !u!114 &6333441211483489057
 MonoBehaviour:
@@ -61,3 +77,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f6917d991e02e140a71a994ce44c428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8060902336015809926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6959a6105eadcd34fa351f1304f81c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetColor: {r: 0.5647059, g: 0.2627451, b: 0.2627451, a: 1}

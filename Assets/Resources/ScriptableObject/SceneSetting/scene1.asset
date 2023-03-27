@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: scene1
   m_EditorClassIdentifier: 
   bools: 00
+  saveBools: 01

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace BerserkPixel.Prata
 {
@@ -47,7 +48,9 @@ namespace BerserkPixel.Prata
         public Action OnDialogCancelled = delegate { };
 
         private bool isInConversation;
-
+        //Tips
+        [SerializeField]Text tipText;//提示文本
+        [SerializeField] GameObject penal;//整个提示框
         private void Awake()
         {
             if (_instance != null && _instance != this)
@@ -139,6 +142,17 @@ namespace BerserkPixel.Prata
             //if (dialogRenderer != null)
             //    dialogRenderer.Render(dialog);
         }
+
+        //---------------Tips-------------------
+        public void ShowTips(string text)
+        {
+            tipText.text = text;//更换提示文本
+            penal.SetActive(true);//开启框
+        }
+        public void HideTips()
+        {
+            penal.SetActive(false);//关闭框
+        }
     }
 
     [Serializable]
@@ -155,8 +169,11 @@ namespace BerserkPixel.Prata
     }
     public interface IDialog
     {
-        public string Text { get; }
+        public string authorName { get; }//对话者名称
+        public string Text { get; }//对话内容
         public List<string> Choices { get; }
         public int Selected { set; }//选择的选项
+        public bool isFacingRight { get; }//图片朝向
+        public Sprite GetImage() ;//对话者图标
     }
 }

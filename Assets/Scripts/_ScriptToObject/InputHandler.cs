@@ -41,6 +41,10 @@ public class InputHandler :ScriptableObject
             new KeyPair( "upswingKey", KeyCode.Alpha2),
             new KeyPair("subductionKey", KeyCode.W),
             new KeyPair("cycloneKey", KeyCode.E),
+            new KeyPair("chopKey", KeyCode.R),
+            new KeyPair("substituteKey", KeyCode.LeftShift),
+            new KeyPair("bagKey", KeyCode.N),
+            new KeyPair("skillMapKey", KeyCode.M),
         };
     }
     private void OnEnable()
@@ -51,6 +55,7 @@ public class InputHandler :ScriptableObject
     {
         this.JosnSave(name, true);   
     }
+    [ContextMenu("Save Setting")]
     public void JosnSave()
     {
         this.JosnSave(name, true);

@@ -45,7 +45,22 @@ namespace Plugins.BerserkPixel.Prata.Samples.Scripts
         }
         public override void Render(IDialog dialog)
         {
-            dialogText.text = dialog.Text;
+            authorText.text = dialog.authorName;//说话者名称
+            dialogText.text = dialog.Text;//对话内容
+            //左右图片
+            if (dialog.isFacingRight)
+            {
+                dialogLeftImage.enabled = true;
+                dialogLeftImage.sprite = dialog.GetImage();
+                dialogRightImage.enabled = false;
+            }
+            else
+            {
+                dialogRightImage.enabled = true;
+                dialogRightImage.sprite = dialog.GetImage();
+                dialogLeftImage.enabled = false;
+            }
+            //设置选项
             if (dialog.Choices.Count > 1)
             {
                 RemoveChoices();
@@ -64,7 +79,7 @@ namespace Plugins.BerserkPixel.Prata.Samples.Scripts
                 //选中第一个选项为选择对象
                 UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(choicesContainer.GetChild(0).gameObject);
             }
-              else
+            else
               {
                    choicesContainer.gameObject.SetActive(false);
               }

@@ -18,5 +18,6 @@ public class LockY : BDele
         Rigidbody2D rigidbody2D = skillManager.GetComponent<Rigidbody2D>();
         rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;//还原Y轴移动
         playerCtrl.EnableMoveCtrl = true;//将移动控制交还移动模块
+        rigidbody2D.AddForce(new Vector2(0,0.02f));//加一点点力
     }
 }

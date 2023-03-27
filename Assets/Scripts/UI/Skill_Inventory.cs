@@ -45,6 +45,18 @@ public class Skill_Inventory : MonoBehaviour
         RSkillInfo[] infos = cfg.GetItems();
         int n = infos.Length;
 
+        //子元素自适应
+        int screenHeight = Screen.height;
+        int screenWidth = Screen.width;
+        float referenceWidth = transform.GetComponentInParent<CanvasScaler>().referenceResolution.x;
+        float referenceHeight = transform.GetComponentInParent<CanvasScaler>().referenceResolution.y;
+        Vector3 objectScale = transform.parent.localScale;
+        transform.parent.localScale = new Vector3(
+               objectScale.x * referenceHeight / (float)screenHeight,
+               objectScale.y * referenceWidth / (float)screenWidth,
+               objectScale.z);
+
+        //生成子元素
         for (int i = 0; i < n; i++)
         {
             Slot skillslot = Instantiate(instance.slot, instance.slotGrid.transform.position, Quaternion.identity);
