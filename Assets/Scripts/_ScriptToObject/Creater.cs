@@ -6,7 +6,7 @@ public abstract class Creater : MonoBehaviour
 {
     [SerializeField] int index;//数据索引
     protected bool Value { 
-        get => DataManager.Instance.m_saveData.GetBool(index);
-        set=> DataManager.Instance.m_saveData.SetBool(index,value); 
+        get => DataManager.Instance.GetSaveBool(index);
+        set=> DataManager.Instance.SetSaveBool(index);//直接取反 
     }
 }

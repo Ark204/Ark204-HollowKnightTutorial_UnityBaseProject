@@ -28,7 +28,7 @@ public abstract class BSaveData : ScriptableObject
     {
         if (!saveDatas.Contains(this)) saveDatas.Add(this);
 #if UNITY_EDITOR
-        OnLoad();//编辑器模式调用加载
+       // OnLoad();//编辑器模式调用加载
 #endif
     }
     protected virtual void OnDestroy()

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8990973306909097307
+--- !u!114 &-7387075256690869575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea6e1996ffb741c46917ec0aa980fa93, type: 3}
+  m_Script: {fileID: 11500000, guid: 6959a6105eadcd34fa351f1304f81c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2387204012705829957
+  targetColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &-7184140969556884283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27,6 +28,33 @@ MonoBehaviour:
   setGravity: 0
   useSpeed: 1
   setSpeed: 1.6
+--- !u!114 &-4198643537242820041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d511f49c8764df448dda6b7dc58c3d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 1.5, y: 0.7, z: 0}
+  scale: 1
+  attackEffect: {fileID: 6119132488986584646, guid: 3c42c5b53ed98d048bf77d41c54a6e38, type: 3}
+--- !u!114 &-791357223509553401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6e1996ffb741c46917ec0aa980fa93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,16 +70,19 @@ MonoBehaviour:
   m_skillID: 11
   m_loop: 0
   m_endTime: 0.8
-  startDeles: []
+  startDeles:
+  - {fileID: 7434347022230048100}
+  - {fileID: 333053317684298563}
   timePoints: []
   stopDeles: []
   exitDeles:
-  - {fileID: 4154261797204876254}
-  - {fileID: -8990973306909097307}
-  - {fileID: -2387204012705829957}
-  - {fileID: 3034840428863741265}
+  - {fileID: 2445941878133116560}
+  - {fileID: -7184140969556884283}
+  - {fileID: -791357223509553401}
+  - {fileID: -4198643537242820041}
+  - {fileID: -7387075256690869575}
   bSkills: []
---- !u!114 &3034840428863741265
+--- !u!114 &333053317684298563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,13 +91,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d511f49c8764df448dda6b7dc58c3d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6959a6105eadcd34fa351f1304f81c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 2.5, y: 0.7, z: 0}
-  scale: 1
-  attackEffect: {fileID: 6119132488986584646, guid: 3c42c5b53ed98d048bf77d41c54a6e38, type: 3}
---- !u!114 &4154261797204876254
+  targetColor: {r: 1, g: 1, b: 1, a: 0.4862745}
+--- !u!114 &2445941878133116560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,3 +109,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockMove: 0
   lockJump: 1
+--- !u!114 &7434347022230048100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8064d0d223c95141a031a6fd9bb6ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animstr: Chop

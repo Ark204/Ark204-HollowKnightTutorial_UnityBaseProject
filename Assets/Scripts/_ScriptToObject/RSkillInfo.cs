@@ -7,13 +7,13 @@ public class RSkillInfo : ScriptableObject
 {
     [SerializeField] Texture2D m_Icon;//图标
     [SerializeField] string displayName;//在UI上显示的名称
-    [SerializeField] string describe;//物品描述
+    [SerializeField][TextArea] string describe;//技能描述
     public Texture2D Icon { get => m_Icon; }//图标
     public string DisplayName { get => displayName; }//名称
     public string Describe { get => describe; }//描述
     [SerializeField] int m_id;
     public int Id => m_id;//技能ID
-    [SerializeField] int m_cdTimee;//技能CD
+    [SerializeField] float m_cdTimee;//技能CD
     public float CdTime => m_cdTimee;
     public RSkillEntity CreatEntity()
     {

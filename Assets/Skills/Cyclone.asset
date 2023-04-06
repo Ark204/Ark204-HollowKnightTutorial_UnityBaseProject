@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24f633ddd5590244b9f297d04f92eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0.4, y: 0.75, z: 0}
+  offset: {x: 0, y: 1.21, z: 0}
   scale: 1
   attackEffect: {fileID: 339754249367978785, guid: 5bc271c45053b8844a3a53d7a2342340, type: 3}
 --- !u!114 &-1417224479058236027

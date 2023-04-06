@@ -169,7 +169,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b0b2cd10f5080ef439082cf9e95f26dc
-  position: {x: -207.9996, y: 612}
+  position: {x: -373.06018, y: 632}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -240,7 +240,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 471a6a2357caafe44bd0144bb830ce0e
-  position: {x: -432.79962, y: 751.99994}
+  position: {x: -597.86017, y: 771.19995}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -288,7 +288,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5305859c8da591f478109e981cf83211
-  position: {x: -249.59961, y: 751.99994}
+  position: {x: -414.66022, y: 771.19995}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -464,7 +464,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 93114d5937118f94aa862758a2b9db5b
-  position: {x: -99.19959, y: 751.99994}
+  position: {x: -264.2602, y: 771.19995}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -605,7 +605,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d02ca4bcf17e0744a885cb7604056ed7
-  position: {x: 220.00037, y: 751.99994}
+  position: {x: 54.93982, y: 771.19995}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -652,7 +652,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 473fe01a657271a4f97a1dd8c78c1dac
-  position: {x: 69.60036, y: 751.99994}
+  position: {x: -95.46011, y: 771.19995}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -673,7 +673,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a15ff25f328fdb94bbf702b4c8a6d959
-  position: {x: -633.5996, y: 751.99994}
+  position: {x: -798.66016, y: 771.19995}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 

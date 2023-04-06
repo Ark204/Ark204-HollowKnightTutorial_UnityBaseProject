@@ -343,11 +343,12 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         Substitute = false;//移除自身
         skillManager.Interrupt();//中断技能（移除完全静止）
         CanBeHit = false;//进入无敌状态
-        StartCoroutine(TQueueExtion.DelayFunc(() => { CanBeHit = true; }, 0.2f));//持续时间后移除
+        StartCoroutine(TQueueExtion.DelayFunc(() => { CanBeHit = true; }, 0.4f));//持续时间后移除
         //获取方向向量
         float hor = InputManager.GetAxisRaw("Horizontal");
         float ver = InputManager.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(hor, ver);//获取方向向量
+        if (!Input.GetKey(InputManager.Instance.inputSystemDic["substituteKey"])) dir = Vector2.zero;//若没有按下替身术键，则不瞬移
         //射线检测目标方向-->瞬移距离=Min(distance,Line)
         Debug.Log(dir);//看看方向
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position + offset, dir, distance, Impenetrable);
@@ -402,7 +403,8 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         EnableMoveCtrl = false;//禁用移动模块
         StartCoroutine(TQueueExtion.DelayFunc(()=> { EnableMoveCtrl = true; }, hitProtectionDuration/2));//持续时间后移除
 
-        Instantiate(hurtFlashObject, transform.position, Quaternion.identity);//受伤特效
+
+        //Instantiate(hurtFlashObject, transform.position, Quaternion.identity);//受伤特效
         //GuiManager.Instance.FadeHurtVignette(vignetteIntensity);//受击背景
         GameManager.Instance.FreezeTime(0.02f);//冻结时间
 

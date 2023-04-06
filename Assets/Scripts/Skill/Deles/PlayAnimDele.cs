@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ArkSkill.Core;
 
+//Trigger
 public class PlayAnimDele : BDele
 {
     [SerializeField] string animstr;

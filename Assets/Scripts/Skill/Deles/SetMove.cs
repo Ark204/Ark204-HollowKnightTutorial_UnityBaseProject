@@ -14,7 +14,8 @@ public class SetMove : BDele
     public override void OnStart(SkillManager skillManager, SkillInfo skillInfo)
     {
         Rigidbody2D rigidbody2D = skillManager.GetComponent<Rigidbody2D>();
-        saveGravity=rigidbody2D.gravityScale;//保存初始重力尺度
+        rigidbody2D.transform.Translate(new Vector3(0, 0.02f, 0)) ;
+        saveGravity =rigidbody2D.gravityScale;//保存初始重力尺度
         rigidbody2D.gravityScale = setGravity;//设置重力尺度
         rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;//禁止Y轴移动
         //speed

@@ -45,12 +45,24 @@ public class InputHandler :ScriptableObject
             new KeyPair("substituteKey", KeyCode.LeftShift),
             new KeyPair("bagKey", KeyCode.N),
             new KeyPair("skillMapKey", KeyCode.M),
+            new KeyPair("mapKey", KeyCode.I),
         };
     }
-    private void OnEnable()
+    private void Awake()
     {
-        this.JosnLoad(name);
+        if (PlayerPrefs.HasKey(name))
+        {
+            JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(name), this);
+        }
+        else
+        {
+            ResetIps();
+        }
     }
+    //private void OnEnable()
+    //{
+    //    this.JosnLoad(name);
+    //}
     private void OnDestroy()
     {
         this.JosnSave(name, true);   

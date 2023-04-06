@@ -9,20 +9,29 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 745eccae6ac23b348b0b2f0a8c07ddd5
   - enabled: 1
-    path: Assets/Scenes/False Knight Boss Scene.unity
+    path: Assets/Scenes/BossProtecter.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/scene11.unity
     guid: e99a4fa4fba09b244a9c90a1c5876595
   - enabled: 1
+    path: Assets/Scenes/scene1.unity
+    guid: c365317c7bd16ca49aad083f6c05bb6e
+  - enabled: 1
+    path: Assets/Scenes/A1.unity
+    guid: 45a7279d960561d4f8082f8164acd87e
+  - enabled: 1
     path: Assets/Scenes/scene2.unity
     guid: d3868c5ea808a4c4992e7668c88b3375
   - enabled: 1
+    path: Assets/Scenes/A3.unity
+    guid: 0cda8dd3154c2f1418d8c99748275be1
+  - enabled: 1
+    path: Assets/Scenes/scene6.unity
+    guid: 0e2b0c8e5918e1843aadb722cbd3ed11
+  - enabled: 1
     path: Assets/Scenes/scene3.unity
     guid: 5d6fa737b02dce94195c7a7e28022ebd
-  - enabled: 1
-    path: Assets/Scenes/scene1.unity
-    guid: c365317c7bd16ca49aad083f6c05bb6e
   - enabled: 1
     path: Assets/Scenes/scene0.unity
     guid: 203dc000f7879894cb4768a64270fc2c
@@ -30,9 +39,39 @@ EditorBuildSettings:
     path: Assets/Scenes/scene5.unity
     guid: c014301ea935dcf4f8ad5d7d211e1400
   - enabled: 1
-    path: Assets/Scenes/scene6.unity
-    guid: 0e2b0c8e5918e1843aadb722cbd3ed11
-  - enabled: 1
     path: Assets/Scenes/scene7.unity
     guid: b882fb211d2b0a248a00823291fdba5a
+  - enabled: 1
+    path: Assets/Scenes/B1.unity
+    guid: d2114601675aa8d4b9cfc7aeeb86e353
+  - enabled: 1
+    path: Assets/Scenes/B2.unity
+    guid: d104db347ca5a864eb9fdefed85943fb
+  - enabled: 1
+    path: Assets/Scenes/C1.unity
+    guid: d2a0106733634f34eab8fd44a2cacd11
+  - enabled: 1
+    path: Assets/Scenes/C2.unity
+    guid: fff17366304cf344498ce374c0acbafa
+  - enabled: 1
+    path: Assets/Scenes/BossWolf.unity
+    guid: f554d3102af852c49849013ceb48587c
+  - enabled: 1
+    path: Assets/Scenes/D1.unity
+    guid: 5682100d0b6c6124581ca86e3f2cb937
+  - enabled: 1
+    path: Assets/Scenes/D2.unity
+    guid: 9673c8fba9f05aa45b5dbddb0311e16a
+  - enabled: 1
+    path: Assets/Scenes/D3.unity
+    guid: 10d945804175f7641932e91f21735686
+  - enabled: 1
+    path: Assets/Scenes/D4.unity
+    guid: 065289f7d55f1024c849e446c6f09112
+  - enabled: 1
+    path: Assets/Scenes/save3.unity
+    guid: e978d8bc6cb1dbc458f519a31e012c46
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 4360a80ec09b71f4c872ecbc25998eb7
   m_configObjects: {}

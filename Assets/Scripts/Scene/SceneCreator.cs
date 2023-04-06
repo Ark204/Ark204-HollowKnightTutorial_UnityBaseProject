@@ -24,17 +24,17 @@ public class SceneCreator : MonoBehaviour
     }
     private void Start()
     {
-        if (DataManager.Instance.m_saveData.GetBool(index,target)==false)
-        {
-            GameObject game;
-            foreach (var elem in OnFalse)
-                game = Instantiate(elem, transform) as GameObject;//生成物体，且列为子物体
-        }
-        else
-        {
-            GameObject game;
-            foreach (var elem in OnTrue)
-                game = Instantiate(elem, transform) as GameObject;//生成物体，且列为子物体
-        }
+        //if (DataManager.Instance.m_saveData.GetBool(index,target)==false)
+        //{
+        //    GameObject game;
+        //    foreach (var elem in OnFalse)
+        //        game = Instantiate(elem, transform) as GameObject;//生成物体，且列为子物体
+        //}
+        //else
+        //{
+        //    GameObject game;
+        //    foreach (var elem in OnTrue)
+        //        game = Instantiate(elem, transform) as GameObject;//生成物体，且列为子物体
+        //}
     }
 }

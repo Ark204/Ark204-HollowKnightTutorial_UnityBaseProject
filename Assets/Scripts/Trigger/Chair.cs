@@ -6,7 +6,8 @@ public class Chair : BTranslate
 {
     [SerializeField] LayerMask playerLayer;
     [SerializeField] bool isTouchPlayer = false;
-    [SerializeField] KeyCode keycode = KeyCode.Alpha7;
+    //[SerializeField] KeyCode keycode = KeyCode.Alpha7;
+    [SerializeField] string keyName = "upKey";
     [SerializeField] SaveScene saveScene;
     [SerializeField] float offset=2f;
 
@@ -29,12 +30,13 @@ public class Chair : BTranslate
     }
     private void Update()
     {
-        if (isTouchPlayer && Input.GetKeyDown(keycode))
+        if (isTouchPlayer && Input.GetKeyDown(InputManager.Instance.inputSystemDic[keyName]))
         {
             string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;//获取当前场景名称
             saveScene.sceneName = sceneName;//更新存档点
             saveScene.targetId = Id;//更新目标点
             BSaveData.Save();//统一存档
+            BerserkPixel.Prata.DialogManager.Instance.ShowTips("已存档", 1f);
         }
     }
 }

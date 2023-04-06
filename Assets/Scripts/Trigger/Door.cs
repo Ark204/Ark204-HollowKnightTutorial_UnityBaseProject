@@ -10,7 +10,9 @@ public class Door : BTranslate
 #endif
     private void OnDrawGizmos()
     {
+#if UNITY_EDITOR
         Gizmos.color = color;//设置颜色
         Gizmos.DrawWireSphere(transform.position, 2f);//绘制传送点
+#endif
     }
 }

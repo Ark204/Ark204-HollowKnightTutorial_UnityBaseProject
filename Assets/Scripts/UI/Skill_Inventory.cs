@@ -11,12 +11,16 @@ public class Skill_Inventory : MonoBehaviour
     public GameObject slotGrid;
     public Text description;
     public Slot slot;
-    //由Slot调用更新描述
-    public static void UpdateSkillInfo(string skilldescription)
+    public GameObject myInventory;
+   
+    bool isOpen;
+
+    [SerializeField] List<RSkillInfo> info;
+
+    private void Update()
     {
-        instance.description.text = skilldescription;
+        OpenInventory();
     }
-    //Normal
     private void Awake()
     {
         if (instance != null)
@@ -25,11 +29,14 @@ public class Skill_Inventory : MonoBehaviour
     }
     private void OnEnable()
     {
-        DataInit();//打开时初始化数据
+        //Clear();
+        //DataInit();
     }
-    private void OnDisable()
+    private void Start()
     {
-        Clear();//关闭时清空数据
+        Clear();
+        DataInit();
+
     }
     void Clear()
     {
@@ -40,11 +47,14 @@ public class Skill_Inventory : MonoBehaviour
             GameObject.Destroy(transform.gameObject);
         }
     }
+    public static void UpdateSkillInfo(string skilldescription)
+    {
+        instance.description.text = skilldescription;
+
+    }
     void DataInit()
     {
         RSkillInfo[] infos = cfg.GetItems();
-        int n = infos.Length;
-
         //子元素自适应
         int screenHeight = Screen.height;
         int screenWidth = Screen.width;
@@ -56,7 +66,26 @@ public class Skill_Inventory : MonoBehaviour
                objectScale.y * referenceWidth / (float)screenWidth,
                objectScale.z);
 
-        //生成子元素
+        int n = info.Count;
+        for (int i = 0; i < n; i++)
+        {
+            Slot skillslot = Instantiate(instance.slot, instance.slotGrid.transform.position, Quaternion.identity);
+            skillslot.gameObject.transform.SetParent(instance.slotGrid.transform);
+            skillslot.skill = info[i];
+            skillslot.slotimage.sprite = Sprite.Create(info[i].Icon,
+                new Rect(0, 0, info[i].Icon.width, info[i].Icon.height),
+            new Vector2(0.5f, 0.5f));
+          
+            
+
+            if (i == 0)//默认选择第一个元素
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(skillslot.gameObject);
+                skillslot.SkillOnClicked();
+            }
+        }
+        n = infos.Length;
         for (int i = 0; i < n; i++)
         {
             Slot skillslot = Instantiate(instance.slot, instance.slotGrid.transform.position, Quaternion.identity);
@@ -65,28 +94,23 @@ public class Skill_Inventory : MonoBehaviour
             skillslot.slotimage.sprite = Sprite.Create(infos[i].Icon,
                 new Rect(0, 0, infos[i].Icon.width, infos[i].Icon.height),
             new Vector2(0.5f, 0.5f));
-            if (i == 0)
-            {
-                EventSystem.current.SetSelectedGameObject(null);
-                EventSystem.current.SetSelectedGameObject(skillslot.gameObject);
-
-                skillslot.SkillOnClicked();
-               
-            }
+                   
         }
     }
-    //void OpenInventory()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.X))
-    //    {
-    //        isOpen = !isOpen;
-    //        if(isOpen)
-    //        {
-    //            Clear();
-    //            DataInit();
-    //        }
-    //        Time.timeScale = isOpen ? 0f : 1f;
-    //        myInventory.SetActive(isOpen);
-    //    }
-    //}
+    void OpenInventory()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            isOpen = !isOpen;
+            if(isOpen)
+            {
+                Clear();
+                DataInit();
+            }
+            Time.timeScale = isOpen ? 0f : 1f;
+            myInventory.SetActive(isOpen);
+        }
+    }
+
+    
 }

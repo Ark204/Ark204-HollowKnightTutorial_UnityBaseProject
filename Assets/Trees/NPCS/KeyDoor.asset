@@ -111,10 +111,7 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: "\u8BBE\u7F6E\u6570\u503C(\u95E8\u7684\u72B6\u6001\u8BB0\u5F55)"
   drawGizmos: 0
-  sceneData: {fileID: 11400000, guid: 7e7c0253293f63c42a247f7e623a0352, type: 2}
-  target: 1
   index: 0
-  value: 1
 --- !u!114 &-5367973178801903152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +148,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5ebffb800d7c6f64d9375d9f0f1ef9f7
-  position: {x: -449.04984, y: 473.6}
+  position: {x: -467.20013, y: 472.00003}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 

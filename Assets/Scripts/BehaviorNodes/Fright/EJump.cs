@@ -8,9 +8,9 @@ public class EJump : ActionNode
 {
     [SerializeField] [Range(-1,1)] int baseFace=-1;
     [SerializeField] float horizontalForce = 5f;
-    [SerializeField] float jumpForce = 10f;
+    [SerializeField] float jumpForce = 10f;//跳跃力度
 
-    [SerializeField] float jumpTime;
+    [SerializeField] float jumpTime;//跳跃时间
     [SerializeField] bool shakeCameraOnLanding;
 
     Rigidbody2D body;

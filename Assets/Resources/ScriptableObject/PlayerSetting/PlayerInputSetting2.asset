@@ -38,6 +38,8 @@ MonoBehaviour:
   - keyName: substituteKey
     currKeyCode: 304
   - keyName: bagKey
-    currKeyCode: 106
+    currKeyCode: 110
   - keyName: skillMapKey
     currKeyCode: 109
+  - keyName: mapKey
+    currKeyCode: 105

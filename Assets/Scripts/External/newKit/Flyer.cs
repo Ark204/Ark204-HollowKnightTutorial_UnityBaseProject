@@ -26,8 +26,8 @@ public class Flyer : MonoBehaviour
     private Vector3 distanceFromPlayer;
     [SerializeField] private float maxSpeedDeviation;
     [SerializeField] private float easing = 1; //How intense should we ease when changing speed? The higher the number, the less air control!
-    private float bombCounter = 0;
-    [SerializeField] private float bombCounterMax = 5; //How many seconds before shooting another bomb?
+    private float bombCounter = 0;//发射剩余冷却时间(实时)
+    [SerializeField] private float bombCounterMax = 5; //(总CD时间)How many seconds before shooting another bomb?
     public float attentionRange; //How far can I see?
     public float lifeSpan; //Keep at zero if you don't want to explode after a certain period of time.
     [System.NonSerialized] public float lifeSpanCounter;
@@ -77,11 +77,11 @@ public class Flyer : MonoBehaviour
     void Update()
     {
         //caculate distance from player
-        if (!lookAtTarget) return;
+        if (!lookAtTarget) return;//如果主角不再视野内，则返回
         distanceFromPlayer.x = (lookAtTarget.position.x + targetOffset.x) - transform.position.x;
         distanceFromPlayer.y = (lookAtTarget.position.y + targetOffset.y) - transform.position.y;
         speedEased += (speed - speedEased) * Time.deltaTime * easing;
-        transform.position += speedEased * Time.deltaTime;
+        transform.position += speedEased * Time.deltaTime;//向主角方向移动
 
         if (lookAtTarget != null || Mathf.Abs(distanceFromPlayer.x) <= attentionRange && Mathf.Abs(distanceFromPlayer.y) <= attentionRange)
         {

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -152,6 +153,17 @@ namespace BerserkPixel.Prata
         public void HideTips()
         {
             penal.SetActive(false);//关闭框
+        }
+        public void ShowTips(string text,float time)
+        {
+            tipText.text = text;//更换提示文本
+            penal.SetActive(true);//开启框
+            StartCoroutine(HideEnum(time));
+        }
+         IEnumerator HideEnum(float time=1f)
+        {
+            yield return new WaitForSeconds(time);
+            HideTips();
         }
     }
 

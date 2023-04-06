@@ -6,40 +6,38 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SaveData", menuName = "ScriptableObjct/磁盘保存数据", order = 0)]
 public class SaveData : BSaveData
 {
+    [SerializeField] int saveCount=1;//持久列表的数目
     //false为全体初始默认状态
-    [SerializeField] List<bool> bools = new List<bool>();//运行时的列表(false)
+    public List<bool> bools = new List<bool>();//运行时的列表(false)
     public List<bool> saveBools = new List<bool>();//持久保存的列表(true)
-    public event System.Action<int,bool> OnRunTimeChange;//当运行时列表变化调用
-    public event System.Action<int, bool> OnSaveChange;//当持久保存列表变化调用
     /// <summary>
     /// 读取
     /// </summary>
     /// <param name="index"></param>
-    /// <param name="target">true为运行时列表，false为持久保存的列表</param>
+    /// <param name="target">true为持久列表，false为运行列表</param>
     /// <returns></returns>
-    public bool GetBool(int index,bool target=true)
-    {
-        if (!target) return bools[index];//从运行时列表找
-        else return saveBools[index];//从持久保存列表找
-    }
-    /// <summary>
-    /// 写入
-    /// </summary>
-    /// <param name="index"></param>
-    /// <param name="value">true为运行时列表，false为持久保存的列表</param>
-    public void SetBool(int index, bool value,bool target=true)
-    {
-        if (!target)
-        {
-            bools[index] = value;//从运行时列表改
-            OnRunTimeChange?.Invoke(index, value);
-        }
-        else
-        {
-            saveBools[index] = value;//从持久保存列表改
-            OnSaveChange?.Invoke(index, value);
-        }
-    }
+    //public bool GetBool(int index,bool target=true)
+    //{
+    //    if (!target) return bools[index];//从运行时列表找
+    //    else return saveBools[index];//从持久保存列表找
+    //}
+    ///// <summary>
+    ///// 写入
+    ///// </summary>
+    ///// <param name="index"></param>
+    ///// <param name="value">true为持久列表，false为运行列表</param>
+    //public void SetBool(int index, bool value,bool target=true)
+    //{
+    //    if (!target)
+    //    {
+    //        bools[index] = value;//从运行时列表改
+    //    }
+    //    else
+    //    {
+    //        saveBools[index] = value;//从持久保存列表改
+    //    }
+    //}
+    //SaveAbout
     //保存时调用此函数
     protected override void OnSave()
     {
@@ -47,10 +45,6 @@ public class SaveData : BSaveData
         for(int i=0;i<bools.Count;i++)
         {
             bools[i] = false;
-        }
-        for (int i = 0; i < saveBools.Count; i++)
-        {
-            saveBools[i] = false;
         }
     }
     //加载时调用此函数
@@ -61,9 +55,23 @@ public class SaveData : BSaveData
         {
             bools[i] = false;
         }
-        for (int i = 0; i < saveBools.Count; i++)
+        //从磁盘读取持久列表
+        if (PlayerPrefs.HasKey(this.name))
         {
-            saveBools[i] = false;
+            //反序列化出List
+            saveBools = JsonUtility.FromJson<SerializationList<bool>>(PlayerPrefs.GetString(this.name)).ToList();
         }
+        else//空档
+        {
+            saveBools = new List<bool>();//创建空列表 TODO:数目
+            for(int i=0;i<saveCount;i++)//初始化
+            {
+                saveBools.Add(false);
+            }
+        }
+    }
+    protected override KeyValuePair<string, string> GetSaveString()
+    {
+        return new KeyValuePair<string, string>(this.name, JsonUtility.ToJson(new SerializationList<bool>(saveBools), true));
     }
 }

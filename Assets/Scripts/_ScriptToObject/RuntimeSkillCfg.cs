@@ -79,17 +79,20 @@ public class RuntimeSkillCfg : BSaveData
 
     protected override void OnLoad() 
     {
+        m_rSkillCfgMap?.Clear();
         //读取磁盘数据
         if (PlayerPrefs.HasKey(this.name))
         {
             //从磁盘读取技能列表
             //JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(this.name),this);
             m_rSkillCfgs = JsonUtility.FromJson<SerializationList<RSkillEntity>>(PlayerPrefs.GetString(this.name)).ToList();
+            //从读取的列表中初始化
+            Init();//重新构造使用表
         }
         else//空档
         {
             m_rSkillCfgs = new List<RSkillEntity>();//创建空列表
-            RSkillCfgMap.Clear();//清空表
+            //RSkillCfgMap.Clear();//清空表
             //添加默认初始技能
             foreach (var elem in defaultInfo)
             {

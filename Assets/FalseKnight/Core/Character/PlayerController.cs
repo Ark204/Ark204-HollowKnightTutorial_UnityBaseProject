@@ -33,7 +33,7 @@ namespace Core.Character
 
         public Animator animator;
         private Rigidbody2D body;
-        private BoxCollider2D collider;
+        private /*Box*/Collider2D collider;
         private AudioSource audioSource;
 
         // Moving axis
@@ -125,7 +125,7 @@ namespace Core.Character
                 Instance = this;
 
             body = GetComponent<Rigidbody2D>();
-            collider = GetComponent<BoxCollider2D>();
+            collider = GetComponent<Collider2D>();//Box->AllCollider
             audioSource = GetComponent<AudioSource>();
             //attackController = GetComponent<AttackController>();
             cam = Camera.main;

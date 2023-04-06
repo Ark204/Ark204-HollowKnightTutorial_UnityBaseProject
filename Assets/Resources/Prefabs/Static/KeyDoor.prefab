@@ -93,7 +93,6 @@ GameObject:
   - component: {fileID: 8538636398168012459}
   - component: {fileID: 8538636398168012456}
   - component: {fileID: 1659814656557471907}
-  - component: {fileID: 6023350368103711876}
   m_Layer: 7
   m_Name: KeyDoor
   m_TagString: Untagged
@@ -161,17 +160,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6023350368103711876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8538636398168012458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d90b9249a2b1e84386ed4c95c4c3013, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneData: {fileID: 11400000, guid: 7e7c0253293f63c42a247f7e623a0352, type: 2}
-  index: 0

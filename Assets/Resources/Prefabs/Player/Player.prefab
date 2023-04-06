@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5054922922713293644}
-  - component: {fileID: 5054922922713293645}
+  - component: {fileID: 5532234123755815585}
   - component: {fileID: 5054922922713293646}
   - component: {fileID: 4796510482394776379}
   - component: {fileID: 4796510482394776376}
@@ -204,7 +204,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &5054922922713293645
+--- !u!61 &5532234123755815585
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,7 +217,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0131492615, y: 1.1}
+  m_Offset: {x: 0, y: 1.010547}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -228,7 +228,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.794713, y: 2.1984577}
+  m_Size: {x: 0.8, y: 2}
   m_EdgeRadius: 0
 --- !u!50 &5054922922713293646
 Rigidbody2D:
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerControlled: 1
-  speed: 2.7
+  speed: 3
   accelerationMultiplier: 2.5
   maxAcceleration: 2
   jumpable:
@@ -459,6 +459,7 @@ MonoBehaviour:
   m_skillId: 5
   upswingId: 6
   useable: 1
+  useableDash: 1
   hurtFlashObject: {fileID: 2629158396685185510, guid: cab2435f4b771dc49a119b9d2aa2b6ce, type: 3}
   hitProtectionDuration: 1
   canBeHit:

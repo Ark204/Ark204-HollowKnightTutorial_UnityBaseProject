@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0267a21686831ad42a4133e63e7fb557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0.89, y: 0.45, z: 0}
+  offset: {x: 0.89, y: 0.5, z: 0}
   scale: 0.3
 --- !u!114 &1617135697352274156
 MonoBehaviour:
@@ -67,5 +67,5 @@ MonoBehaviour:
   damage: 1
   maxTarget: 8
   attackRange:
-    center: {x: 1.96, y: 0.43, z: 0}
-    radius: 1.28
+    center: {x: 1.96, y: 1.04, z: 0}
+    radius: 1.43

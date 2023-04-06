@@ -34,6 +34,7 @@ MonoBehaviour:
   stopDeles: []
   exitDeles:
   - {fileID: -7066287242866900257}
+  - {fileID: 4631369313044615382}
   bSkills: []
 --- !u!114 &4005580018340881039
 MonoBehaviour:
@@ -50,3 +51,17 @@ MonoBehaviour:
   offset: {x: 0.98, y: 1.76, z: 0}
   scale: 1
   attackEffect: {fileID: 1267670110627953568, guid: 0e7c6b2d41cc3a64f82e1899c324d894, type: 3}
+--- !u!114 &4631369313044615382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2087445c0966f6f4897e9c666944e7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockMove: 0
+  lockJump: 1
