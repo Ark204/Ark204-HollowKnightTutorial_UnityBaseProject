@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7F8E\u672F\uFF1A\u738B\u5927\u70AE"
+  m_Text: "\u7A0B\u5E8F\uFF1A\u6E05\u4E00\u8272"
 --- !u!1 &1540160775609701088
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7F8E\u672F\uFF1A\u738B\u5927\u70AE"
+  m_Text: "\u7F8E\u672F\uFF1A\u9189\u751F\u68A6\u6B7B"
 --- !u!1 &3289548578257720553
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7F8E\u672F\uFF1A\u738B\u5927\u70AE"
+  m_Text: "\u7B56\u5212\uFF1A"
 --- !u!1 &3301419800400415947
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +315,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7F8E\u672F\uFF1A\u738B\u5927\u70AE"
+  m_Text: "\u7A0B\u5E8F\u3001\u7B56\u5212\uFF1AArk"
 --- !u!1 &3633492683352454485
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +708,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7F8E\u672F\uFF1A\u738B\u5927\u70AE"
+  m_Text: "\u7F8E\u672F\uFF1A"
 --- !u!1 &3633492684129875190
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,7 +787,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u961F\u540D\n"
+  m_Text: "\u6CE5\u5934\u8F66\u961F"
 --- !u!1 &7264514772972983311
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +848,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 7
   m_TargetDisplay: 0
 --- !u!114 &578758909059785560
 MonoBehaviour:
@@ -968,4 +968,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7F8E\u672F\uFF1A\u738B\u5927\u70AE"
+  m_Text: "\u7F8E\u672F\uFF1A\u4E59\u70EF"

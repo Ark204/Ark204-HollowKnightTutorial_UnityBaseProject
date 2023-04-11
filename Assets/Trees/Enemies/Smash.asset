@@ -1,0 +1,184 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7998718972124116160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5134d9de14153468b48928d3e7359a, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 66932330be0160149b29bc7f8488ab01
+  position: {x: -112.599976, y: -44}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  drawGizmos: 0
+  duration: 0.4
+--- !u!114 &-7900865116640666744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 26939a79678543641a7dde5c8b99f5f2
+  position: {x: -71.20001, y: -178.4}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: "\u8DF3\u7838"
+  drawGizmos: 0
+  children:
+  - {fileID: -4280790339287210045}
+  - {fileID: 2454342948858031973}
+  - {fileID: -7998718972124116160}
+  - {fileID: 6182642761832082890}
+--- !u!114 &-7006701333671719435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c147d123e4a945b688eddc64e3ea5, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ea4ff3573a2f3474ea8b1e4307a8365a
+  position: {x: -72, y: -402.448}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  drawGizmos: 0
+  child: {fileID: 7203146095521266829}
+--- !u!114 &-4280790339287210045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd328339d9a508147a085090f9aeb28c, type: 3}
+  m_Name: FaceToPlayer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 7649197769a9e3a4683735b912acaab3
+  position: {x: -443.81546, y: -43.999943}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  drawGizmos: 0
+  range: {fileID: 0}
+  baseFace: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
+  m_Name: Smash
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -7006701333671719435}
+  treeState: 0
+  nodes:
+  - {fileID: -7006701333671719435}
+  - {fileID: 7203146095521266829}
+  - {fileID: -7900865116640666744}
+  - {fileID: 2454342948858031973}
+  - {fileID: 6182642761832082890}
+  - {fileID: -7998718972124116160}
+  - {fileID: -4280790339287210045}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &2454342948858031973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec7bde4ec881984fbd54c0fa471d033, type: 3}
+  m_Name: PlayAnim
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 8302bde053ca5ca4e94ba184f8effc69
+  position: {x: -272.8, y: -44}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  drawGizmos: 0
+  animString: Attack
+--- !u!114 &6182642761832082890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a59a26c3df3b5dc48ae91ab6898ae7b8, type: 3}
+  m_Name: EJump
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: e80c60e320f6fd348a984245aefb58fe
+  position: {x: 59.400024, y: -44}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  drawGizmos: 0
+  baseFace: 1
+  horizontalForce: 3
+  jumpForce: 10
+  jumpTime: 2
+  shakeCameraOnLanding: 0
+--- !u!114 &7203146095521266829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb5496e8cd973748a10b3e3ef436ebd, type: 3}
+  m_Name: Repeat
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1274f5385e10a014580480da8b9be6d5
+  position: {x: -71.20001, y: -290.2}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  drawGizmos: 0
+  child: {fileID: -7900865116640666744}
+  restartOnSuccess: 1
+  restartOnFailure: 1

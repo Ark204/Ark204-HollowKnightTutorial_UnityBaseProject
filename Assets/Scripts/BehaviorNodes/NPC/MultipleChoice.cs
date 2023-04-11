@@ -21,6 +21,7 @@ public class MultipleChoice : CompositeNode,IDialog
     //对话者图标
     public Sprite GetImage()
     {
+        if (m_texture2D == null) return null;
         return Sprite.Create(m_texture2D, new Rect(0, 0, m_texture2D.width, m_texture2D.height),
              new Vector2(0.5f, 0.5f));
     }

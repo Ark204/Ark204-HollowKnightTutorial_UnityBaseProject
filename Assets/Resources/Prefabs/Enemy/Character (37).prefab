@@ -24503,7 +24503,7 @@ Transform:
   m_GameObject: {fileID: 7819557398129667173}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7819557398359384292}
   - {fileID: 9056592169766334333}
@@ -24564,7 +24564,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14466411, y: 0.42770267}
+  m_Offset: {x: -0.047627687, y: 0.20196891}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -24575,7 +24575,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.540918, y: 1.8554053}
+  m_Size: {x: 2.326806, y: 1.3704958}
   m_EdgeRadius: 0
 --- !u!114 &7819557398129667177
 MonoBehaviour:
@@ -24765,8 +24765,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7819557398359384295}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05199957, y: -0.23500061, z: -0.062494062}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.05199957, y: 0.31, z: -0.062494062}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7819557398129667194}
   m_RootOrder: 0
@@ -24811,7 +24811,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2645710269796665917, guid: 0c1e734fa85636743af3bc22c6d99ba8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a9d597da126a884a84c1ab32c15faf3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -24868,7 +24868,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06997669, y: 0.3998661}
+  m_Offset: {x: -0.06379151, y: 0.21593484}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -24879,7 +24879,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5798061, y: 1.8397183}
+  m_Size: {x: 2.3489728, y: 1.3715296}
   m_EdgeRadius: 0
 --- !u!114 &9015581930195791212
 MonoBehaviour:

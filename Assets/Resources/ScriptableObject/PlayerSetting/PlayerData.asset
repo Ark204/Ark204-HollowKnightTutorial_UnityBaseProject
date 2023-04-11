@@ -16,5 +16,6 @@ MonoBehaviour:
     maxHp: 50
     maxEnerge: 10
     attackPower: 1
-  HP: 45
-  Energe: 0
+  HP: 50
+  Energe: 4
+  lastSkillID: 0

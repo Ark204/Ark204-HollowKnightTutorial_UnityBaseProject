@@ -20,9 +20,10 @@ public class SkillIconCool : MonoBehaviour
             if (value == null) return;
             //…Ë÷√Õº±Í
             var texture = value.Icon;
-               image.sprite = Sprite.Create(texture,
-                new Rect(0, 0, texture.width, texture.height),
-            new Vector2(0.5f, 0.5f));
+            image.sprite = texture;
+            //   image.sprite = Sprite.Create(texture,
+            //    new Rect(0, 0, texture.width, texture.height),
+            //new Vector2(0.5f, 0.5f));
         } }
     private void Awake()
     {

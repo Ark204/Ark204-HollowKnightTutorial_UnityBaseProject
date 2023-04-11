@@ -33,8 +33,8 @@ public class SaveScene : BSaveData
         else
         {
             //初始化数据
-            sceneName = "scene1";
-            targetId = 1;
+            sceneName = "scene0";
+            targetId = 0;
         }
     }
     protected override void OnSave() { }

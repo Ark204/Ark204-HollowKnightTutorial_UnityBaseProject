@@ -345,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_acceptType: -1
   marked: 0
-  hitType: 3
+  hitType: 0
   disableHitEffect: 0
   spriteParent: {fileID: 0}
   customHitEffect: {fileID: 6072807543114314965, guid: 2b07c7b33d312354b8cabb328744b1c9, type: 3}

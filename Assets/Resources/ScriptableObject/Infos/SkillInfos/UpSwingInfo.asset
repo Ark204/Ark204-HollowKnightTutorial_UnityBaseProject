@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3598d5743206e3c4d8b8382bff65be65, type: 3}
   m_Name: UpSwingInfo
   m_EditorClassIdentifier: 
-  m_Icon: {fileID: 2800000, guid: 7092324b93851a14c858530cca4a6b26, type: 3}
+  m_Icon: {fileID: -5999898106214327340, guid: 8433e9b2991d8884c9554decd47b768d, type: 3}
   displayName: "\u4E0A\u6311"
   describe: "\u5728\u7A7A\u4E2D\u53EA\u80FD\u4F7F\u7528\u4E00\u6B21\uFF0C\u843D\u5730\u540E\u91CD\u7F6E"
   m_id: 6

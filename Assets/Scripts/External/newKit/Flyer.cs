@@ -150,9 +150,9 @@ public class Flyer : MonoBehaviour
             }
         }
 
-        if (lookAtTarget != null)
+        if (lookAtTarget != null&& !shootsBomb)//看到目标且是子弹
         {
-            LookAt2D();
+            LookAt2D();// 旋转
         }
       
         if (lifeSpan != 0)

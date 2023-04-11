@@ -21,8 +21,12 @@ public class SingleChoice : ActionNode, IDialog
     //对话者图标
     public Sprite GetImage()
     {
-        return Sprite.Create(m_texture2D, new Rect(0, 0, m_texture2D.width, m_texture2D.height),
-             new Vector2(0.5f, 0.5f));
+        if (m_texture2D != null)
+        {
+            return Sprite.Create(m_texture2D, new Rect(0, 0, m_texture2D.width, m_texture2D.height),
+                 new Vector2(0.5f, 0.5f));
+        }
+        else return null;
     }
     protected override void OnStart()
     {

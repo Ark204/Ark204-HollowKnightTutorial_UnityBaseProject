@@ -71,12 +71,12 @@ public class Skill_Inventory : MonoBehaviour
         {
             Slot skillslot = Instantiate(instance.slot, instance.slotGrid.transform.position, Quaternion.identity);
             skillslot.gameObject.transform.SetParent(instance.slotGrid.transform);
+            skillslot.gameObject.transform.localScale = Vector3.one;//控制子元素缩放
             skillslot.skill = info[i];
-            skillslot.slotimage.sprite = Sprite.Create(info[i].Icon,
-                new Rect(0, 0, info[i].Icon.width, info[i].Icon.height),
-            new Vector2(0.5f, 0.5f));
-          
-            
+            skillslot.slotimage.sprite = info[i].Icon;
+            //skillslot.slotimage.sprite = Sprite.Create(info[i].Icon,
+            //    new Rect(0, 0, info[i].Icon.width, info[i].Icon.height),
+            //new Vector2(0.5f, 0.5f));
 
             if (i == 0)//默认选择第一个元素
             {
@@ -90,11 +90,13 @@ public class Skill_Inventory : MonoBehaviour
         {
             Slot skillslot = Instantiate(instance.slot, instance.slotGrid.transform.position, Quaternion.identity);
             skillslot.gameObject.transform.SetParent(instance.slotGrid.transform);
+            skillslot.gameObject.transform.localScale = Vector3.one;//控制子元素缩放
             skillslot.skill = infos[i];
-            skillslot.slotimage.sprite = Sprite.Create(infos[i].Icon,
-                new Rect(0, 0, infos[i].Icon.width, infos[i].Icon.height),
-            new Vector2(0.5f, 0.5f));
-                   
+            skillslot.slotimage.sprite = infos[i].Icon;
+            //skillslot.slotimage.sprite = Sprite.Create(infos[i].Icon,
+            //    new Rect(0, 0, infos[i].Icon.width, infos[i].Icon.height),
+            //new Vector2(0.5f, 0.5f));
+
         }
     }
     void OpenInventory()

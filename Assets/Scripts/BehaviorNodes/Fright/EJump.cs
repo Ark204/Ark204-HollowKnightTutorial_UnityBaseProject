@@ -20,7 +20,6 @@ public class EJump : ActionNode
     protected override void OnStart() {
         body = context.gameObject.GetComponent<Rigidbody2D>();
         body.AddForce(new Vector2(horizontalForce * context.transform.localScale.x * baseFace, jumpForce), ForceMode2D.Impulse);//³åÁ¿
-
         jumpTween=DG.Tweening.DOVirtual.DelayedCall(jumpTime, () =>
          {
              hasLanded = true;

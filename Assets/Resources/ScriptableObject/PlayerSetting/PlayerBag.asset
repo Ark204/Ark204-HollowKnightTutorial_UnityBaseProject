@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: PlayerBag
   m_EditorClassIdentifier: 
   items:
-  - count: 24
+  - count: 14
     m_Info: {fileID: 11400000, guid: c1b81a316a919e9499250f7e00f44619, type: 2}
+  - count: 14
+    m_Info: {fileID: 11400000, guid: 4ce33323f92bd7c429b3accd5b6cfa3d, type: 2}

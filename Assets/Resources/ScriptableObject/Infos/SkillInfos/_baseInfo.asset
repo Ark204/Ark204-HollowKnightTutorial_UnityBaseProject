@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3598d5743206e3c4d8b8382bff65be65, type: 3}
   m_Name: _baseInfo
   m_EditorClassIdentifier: 
-  m_Icon: {fileID: 2800000, guid: 719c2201c2f5f6c4aafffaeb5abdf5f9, type: 3}
-  displayName: "\u65F6\u95F4\u8DC3\u8FC1"
-  describe: "\u88AB\u52A8\u6280\u80FD\uFF0C\u81EA\u8EAB\u4F7F\u7528\u4E0D\u540C\u65B9\u5F0F\u547D\u4E2D\u6216\u6210\u529F\u4F7F\u7528\u66FF\u8EAB\u672F\u65F6\uFF0C\u81EA\u8EAB\u6240\u6709\u6280\u80FDCD\u51CF\u5C1145S"
+  m_Icon: {fileID: -2255356125184915743, guid: 37ea17c2f82934b45beb9f986f72c454, type: 3}
+  displayName: "\u65A9\u65F6"
+  describe: "\u88AB\u52A8\u6280\u80FD\uFF0C\u81EA\u8EAB\u4F7F\u7528\u4E0D\u540C\u65B9\u5F0F\u547D\u4E2D\u6216\u6210\u529F\u4F7F\u7528\u66FF\u8EAB\u672F\u65F6\uFF0C\u81EA\u8EAB\u6240\u6709\u6280\u80FDCD\u51CF\u5C1160S"
   m_id: -2
   m_cdTimee: 0

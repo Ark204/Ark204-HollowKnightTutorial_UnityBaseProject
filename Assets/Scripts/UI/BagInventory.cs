@@ -63,9 +63,10 @@ public class BagInventory : MonoBehaviour
             ItemSlot itemSlot = Instantiate(instance.slot, instance.slotGrid.transform.position, Quaternion.identity);
             itemSlot.gameObject.transform.SetParent(instance.slotGrid.transform);
             itemSlot.item = infos[i].Item1;
-            itemSlot.slotimage.sprite = Sprite.Create(infos[i].Item1.Icon,
-                new Rect(0, 0, infos[i].Item1.Icon.width, infos[i].Item1.Icon.height),
-            new Vector2(0.5f, 0.5f));
+            itemSlot.slotimage.sprite = infos[i].Item1.Icon;//Ö±½Ó¸³Öµ
+            //itemSlot.slotimage.sprite = Sprite.Create(infos[i].Item1.Icon,
+            //    new Rect(0, 0, infos[i].Item1.Icon.width, infos[i].Item1.Icon.height),
+            //new Vector2(0.5f, 0.5f));
             itemSlot.count.text = infos[i].Item2.ToString();
             if (i == 0)
             {

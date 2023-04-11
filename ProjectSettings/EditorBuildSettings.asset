@@ -54,6 +54,15 @@ EditorBuildSettings:
     path: Assets/Scenes/C2.unity
     guid: fff17366304cf344498ce374c0acbafa
   - enabled: 1
+    path: Assets/Scenes/C3.unity
+    guid: 1d5b98d49c5cb19489fb79594b492826
+  - enabled: 1
+    path: Assets/Scenes/C4.unity
+    guid: 2822a6f9bfd92a64fad5d74fe4eeebcb
+  - enabled: 1
+    path: Assets/Scenes/save2.unity
+    guid: bb47f8cbac982654b917cd3e49b233a2
+  - enabled: 1
     path: Assets/Scenes/BossWolf.unity
     guid: f554d3102af852c49849013ceb48587c
   - enabled: 1
@@ -74,4 +83,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/End.unity
     guid: 4360a80ec09b71f4c872ecbc25998eb7
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 55dc2f0e1d312ad429ad915acf767b8e
   m_configObjects: {}

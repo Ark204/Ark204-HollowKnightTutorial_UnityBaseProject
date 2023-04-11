@@ -12,6 +12,8 @@ public delegate BeAttackedable[] GetTargets(Transform transform);
 
 public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
 {
+    [SerializeField] float intervalTime = 0.1f;//闪烁间隔
+    SpriteRenderer m_render;
     PlayerController moveCtrl;
     SkillManager skillManager;
     Animator animator;
@@ -74,19 +76,18 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
     public float pushPower = 1f;
     [Header("Sub CD")]
     public float SubTime = 30f;//触发减CD时减少的时间
-    int lastSkillID=-1;//上一个命中的技能ID
     //暂时使用中心事件队列实现
     void TriggerSub(int id)
     {
         if (id == 11) Hp+=2;//TODO:ID视化
-        if (lastSkillID == id) return;//技能相同 直接返回
+        if (playerData.lastSkillID == id) return;//技能相同 直接返回
         //触发减CD
         foreach(var elem in m_runtimeSkillCfg.RSkillCfgMap)
         {
             if (elem.Key == id) continue;//若命中技能为释放技能，则跳过
             if (elem.Value.LastCdTime > 0) elem.Value.LastCdTime -= SubTime;//若CD大于零，则减少CD
         }
-        lastSkillID = id;//更新上一次命中技能ID
+        playerData.lastSkillID = id;//更新上一次命中技能ID
     }
     /// <summary>
     /// 设置是否禁用移动模块
@@ -100,6 +101,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         moveCtrl = GetComponent<PlayerController>();
         animator = GetComponentInChildren<Animator>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+        m_render = GetComponentInChildren<SpriteRenderer>();//获取渲染组件
         //Camera
         cam = Camera.main;
         camController = cam.GetComponent<CameraController>();
@@ -321,6 +323,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
     [SerializeField] LayerMask Impenetrable;//瞬移不可穿透的层
     [SerializeField] Vector3 offset;
     [SerializeField] float ImpOffset=0.2f;//遇到不可穿透层的偏移
+    [SerializeField] UnityEngine.Object shadow;//影子预制体
     [Monitor]
     public bool Substitute//替身术状态
     {
@@ -343,14 +346,17 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         Substitute = false;//移除自身
         skillManager.Interrupt();//中断技能（移除完全静止）
         CanBeHit = false;//进入无敌状态
+        var effect = (GameObject)Instantiate(shadow);//加载替身术特效
+        effect.transform.position += transform.position;//定位
+        animator.SetTrigger("FadeIn");//淡入动画
         StartCoroutine(TQueueExtion.DelayFunc(() => { CanBeHit = true; }, 0.4f));//持续时间后移除
         //获取方向向量
         float hor = InputManager.GetAxisRaw("Horizontal");
         float ver = InputManager.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(hor, ver);//获取方向向量
-        if (!Input.GetKey(InputManager.Instance.inputSystemDic["substituteKey"])) dir = Vector2.zero;//若没有按下替身术键，则不瞬移
+        //if (!Input.GetKey(InputManager.Instance.inputSystemDic["substituteKey"])) dir = Vector2.zero;//若没有按下替身术键，则不瞬移
         //射线检测目标方向-->瞬移距离=Min(distance,Line)
-        Debug.Log(dir);//看看方向
+        //Debug.Log(dir);//看看方向
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position + offset, dir, distance, Impenetrable);
         float trueDis = distance;//真正瞬移距离
         if (hitInfo.collider != null)//该方向上有地形阻挡
@@ -358,7 +364,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
             trueDis = Vector2.Distance(transform.position + offset, hitInfo.point);//真正瞬移距离为当前位置到地形的距离
         }
         transform.position = transform.position + (Vector3)dir.normalized * trueDis;//瞬移
-        lastSkillID = -1;//重置上一次触发的技能ID
+        playerData.lastSkillID = -1;//重置上一次触发的技能ID
         m_runtimeSkillCfg.SubCD(SubTime);//-CD,全体，包括自身
         return true;
     }
@@ -369,6 +375,18 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
     // Camera
     private CameraController camController;
     private Camera cam;
+
+    IEnumerator DoBlinks(float totalTime,float interval)
+    {
+        int times = (int)(totalTime / interval);//计算闪烁次数
+        for(int i=0;i<times;i++)//TODO: 不确定要不要*2
+        {
+            m_render.enabled = !m_render.enabled;//取反渲染器状态
+            yield return new WaitForSeconds(interval);
+        }
+        m_render.enabled = true;//保证最后渲染器是开启的
+    }
+
     /// <summary>
     /// 外部调用使主体受伤函数
     /// </summary>
@@ -403,7 +421,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         EnableMoveCtrl = false;//禁用移动模块
         StartCoroutine(TQueueExtion.DelayFunc(()=> { EnableMoveCtrl = true; }, hitProtectionDuration/2));//持续时间后移除
 
-
+        StartCoroutine(DoBlinks(hitProtectionDuration, intervalTime)); //受击闪烁
         //Instantiate(hurtFlashObject, transform.position, Quaternion.identity);//受伤特效
         //GuiManager.Instance.FadeHurtVignette(vignetteIntensity);//受击背景
         GameManager.Instance.FreezeTime(0.02f);//冻结时间

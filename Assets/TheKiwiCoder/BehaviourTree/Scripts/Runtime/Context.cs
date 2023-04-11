@@ -22,6 +22,7 @@ namespace TheKiwiCoder {
         // Add other game specific systems here
         public Core.Combat.Destructable destructable;//受击组件
         public DragonBones.UnityArmatureComponent armatureComponent;//骨骼动画组件
+        public ERange range;//活动范围
 
         public static Context CreateFromGameObject(GameObject gameObject) {
             // Fetch all commonly used components
@@ -39,6 +40,7 @@ namespace TheKiwiCoder {
             // Add whatever else you need here...
             context.destructable = gameObject.GetComponent<Core.Combat.Destructable>();
             context.armatureComponent=gameObject.GetComponentInChildren<DragonBones.UnityArmatureComponent>();
+            context.range = gameObject.GetComponentInChildren<ERange>();
 
             return context;
         }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3598d5743206e3c4d8b8382bff65be65, type: 3}
   m_Name: _Test
   m_EditorClassIdentifier: 
-  m_Icon: {fileID: 2800000, guid: 2c04f4986ebc72e48a8b0c3eb2e42db2, type: 3}
+  m_Icon: {fileID: 204434607578480675, guid: 2009c3553ebfe1544846a402a2f43571, type: 3}
   displayName: "\u6D4B\u8BD5\u6280\u80FD"
   describe: "\u6D4B\u8BD5\u6280\u80FD"
   m_id: 5

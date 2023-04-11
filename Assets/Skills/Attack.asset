@@ -27,7 +27,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_skillID: 0
   m_loop: 0
-  m_endTime: 0.3
+  m_endTime: 0.4
   startDeles:
   - {fileID: -1195046901738024102}
   - {fileID: 1090251163378430946}

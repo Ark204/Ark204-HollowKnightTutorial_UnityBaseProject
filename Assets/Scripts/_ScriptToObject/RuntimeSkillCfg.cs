@@ -6,7 +6,7 @@ using UnityEngine;
 {
     [SerializeField] RSkillInfo m_Info;
     public RSkillInfo RSkillInfo { get => m_Info; }
-    public Texture2D Icon { get => m_Info.Icon; }
+    public Sprite Icon { get => m_Info.Icon; }
     public string Describe { get => m_Info.Describe; }
     public int Id => m_Info.Id;
     public float CdTime => m_Info.CdTime;

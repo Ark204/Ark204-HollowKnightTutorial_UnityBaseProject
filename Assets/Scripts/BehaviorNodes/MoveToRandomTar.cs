@@ -7,14 +7,14 @@ using TheKiwiCoder;
 public class MoveToRandomTar : ActionNode
 {
     [SerializeField] [Range(-1, 1)] int baseFace = 1;//初始朝向(默认朝右 为1)
-    [SerializeField]Vector2 xRange=new Vector2(-10,10);//x轴范围
+    //[SerializeField]Vector2 xRange=new Vector2(-10,10);//x轴范围
     float targetX;//本次移动的随机X坐标
     [SerializeField] float minDistance;//下一个随机巡逻点的最小距离
     public float speed = 5;//移动速度
     public float stoppingDistance = 0.1f;//停止距离
     protected override void OnStart()
     {
-        float x = Random.Range(xRange.x, xRange.y - 2 * minDistance);
+        float x = Random.Range(context.range.xRange.x, context.range.xRange.y - 2 * minDistance);
         if (x > context.transform.position.x - minDistance) x += 2 * minDistance;
         targetX = x;//获取随机坐标点
         //面向该坐标
@@ -34,9 +34,9 @@ public class MoveToRandomTar : ActionNode
     }
 
     protected override void OnStop() { }
-    public override void OnDrawGizmos()
-    {
-        if (context == null||context.transform==null) return;  
-        Gizmos.DrawWireCube(new Vector3((xRange.x+xRange.y)/2,context.transform.position.y,0), new Vector3(Mathf.Abs(xRange.x-xRange.y), 3, 0));
-    }
+    //public override void OnDrawGizmos()
+    //{
+    //    if (context == null||context.transform==null) return;  
+    //    Gizmos.DrawWireCube(new Vector3((xRange.x+xRange.y)/2,context.transform.position.y,0), new Vector3(Mathf.Abs(xRange.x-xRange.y), 3, 0));
+    //}
 }

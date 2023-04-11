@@ -45,19 +45,19 @@ namespace Plugins.BerserkPixel.Prata.Samples.Scripts
         }
         public override void Render(IDialog dialog)
         {
-            authorText.text = dialog.authorName;//说话者名称
+            if(dialog.authorName!="") authorText.text = dialog.authorName;//说话者名称
             dialogText.text = dialog.Text;//对话内容
             //左右图片
             if (dialog.isFacingRight)
             {
                 dialogLeftImage.enabled = true;
-                dialogLeftImage.sprite = dialog.GetImage();
+                if(dialog.GetImage()!=null) dialogLeftImage.sprite = dialog.GetImage();
                 dialogRightImage.enabled = false;
             }
             else
             {
                 dialogRightImage.enabled = true;
-                dialogRightImage.sprite = dialog.GetImage();
+                if (dialog.GetImage() != null) dialogRightImage.sprite = dialog.GetImage();
                 dialogLeftImage.enabled = false;
             }
             //设置选项

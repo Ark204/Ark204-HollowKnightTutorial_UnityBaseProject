@@ -23,6 +23,7 @@ public class PlayerData:BSaveData
     public int Energe=0;
     public int MaxEnerge { get => m_saveData.maxEnerge; set { m_saveData.maxEnerge = value; } }
     //AttackData
+    public int lastSkillID = -1;//上一个命中的技能ID,默认-1表空
     public float AttackPower { get => m_saveData.attackPower; set { m_saveData.attackPower = value; } }
 
     //消息：外部调用存储时调用
