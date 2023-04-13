@@ -19,7 +19,7 @@ public class Skill_Inventory : MonoBehaviour
 
     private void Update()
     {
-        OpenInventory();
+        //OpenInventory();
     }
     private void Awake()
     {

@@ -22,7 +22,7 @@ MonoBehaviour:
   drawGizmos: 0
   bag: {fileID: 11400000, guid: 8f326300f3b8e644092fb643dc893d14, type: 2}
   info: {fileID: 11400000, guid: c1b81a316a919e9499250f7e00f44619, type: 2}
-  count: -200
+  count: -300
 --- !u!114 &-6851412908954975076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,9 +71,9 @@ MonoBehaviour:
   - {fileID: 7163436993936384806}
   m_authorName: "\u5E08\u5085"
   m_selected: -1
-  m_text: "\u662F\u5426\u4F7F\u7528200\u94C1\u5E01\u6765\u94F8\u9020\u94A5\u5319"
+  m_text: "\u662F\u5426\u4F7F\u7528300\u94C1\u5E01\u6765\u94F8\u9020\u94A5\u5319"
   m_choices:
-  - "\u6253\u9020(200\u94C1\u5E01)"
+  - "\u6253\u9020(300\u94C1\u5E01)"
   - "\u53D6\u6D88"
   m_isFacingRight: 1
   m_texture2D: {fileID: 2800000, guid: 41728900384f1964aa61e2e8a1331587, type: 3}
@@ -92,7 +92,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: acb32ee9dd223214e8a7d41f80e1d146
-  position: {x: 485.48148, y: 764.86304}
+  position: {x: 471.6, y: 764.8}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -240,13 +240,13 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 471a6a2357caafe44bd0144bb830ce0e
-  position: {x: -597.86017, y: 771.19995}
+  position: {x: -648.8002, y: 770.4001}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
   m_authorName: "\u5E08\u5085"
-  m_text: "\u54E6\uFF1F\u6280\u80FD\u51B7\u5374\u65F6\u95F4\u5076\u5C14\u4F1A\u51FA\u73B0\u51CF\u5C11\u7684\u73B0\u8C61\uFF1F"
+  m_text: "\u54E6\uFF1F\u6218\u6597\u4E2D\u6280\u80FD\u51B7\u5374\u65F6\u95F4\u4F1A\u51FA\u73B0\u51CF\u5C11\u7684\u73B0\u8C61\uFF1F"
   m_isFacingRight: 1
   m_texture2D: {fileID: 2800000, guid: 41728900384f1964aa61e2e8a1331587, type: 3}
 --- !u!114 &-736066841765247497
@@ -288,7 +288,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5305859c8da591f478109e981cf83211
-  position: {x: -414.66022, y: 771.19995}
+  position: {x: -499.20016, y: 770.4001}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -464,7 +464,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 93114d5937118f94aa862758a2b9db5b
-  position: {x: -264.2602, y: 771.19995}
+  position: {x: -349.60022, y: 770.4001}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -605,7 +605,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d02ca4bcf17e0744a885cb7604056ed7
-  position: {x: 54.93982, y: 771.19995}
+  position: {x: -50.39998, y: 771.2001}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -652,7 +652,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 473fe01a657271a4f97a1dd8c78c1dac
-  position: {x: -95.46011, y: 771.19995}
+  position: {x: -200.00006, y: 771.2001}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -700,7 +700,7 @@ MonoBehaviour:
   description: 
   drawGizmos: 0
   m_authorName: "\u5E08\u5085"
-  m_text: "\u8FD8\u8981\u518D\u601D\u8003\u4E00\u4E0B\u5417\uFF1F"
+  m_text: "\u8FD8\u8981\u518D\u8003\u8651\u4E00\u4E0B\u5417\uFF1F"
   m_isFacingRight: 1
   m_texture2D: {fileID: 2800000, guid: 41728900384f1964aa61e2e8a1331587, type: 3}
 --- !u!114 &7833055139572712401

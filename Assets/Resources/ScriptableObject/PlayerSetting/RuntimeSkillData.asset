@@ -12,14 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a306c80f1ec5727469b68c892bc1d6e4, type: 3}
   m_Name: RuntimeSkillData
   m_EditorClassIdentifier: 
-  m_rSkillCfgs:
-  - m_Info: {fileID: 11400000, guid: 2698e8f3be6d96e4d981f97d9611d51a, type: 2}
-    m_lastCdTime: 0
-  - m_Info: {fileID: 11400000, guid: fc1c751fe4f3ac54eb136d5833bfd6d4, type: 2}
-    m_lastCdTime: -0.03676357
-  - m_Info: {fileID: 11400000, guid: 02fa6328c1bc18245b861ec9dde34f82, type: 2}
-    m_lastCdTime: -2.4355927
+  m_rSkillCfgs: []
   defaultInfo:
-  - {fileID: 11400000, guid: 2698e8f3be6d96e4d981f97d9611d51a, type: 2}
   - {fileID: 11400000, guid: fc1c751fe4f3ac54eb136d5833bfd6d4, type: 2}
-  - {fileID: 11400000, guid: 02fa6328c1bc18245b861ec9dde34f82, type: 2}

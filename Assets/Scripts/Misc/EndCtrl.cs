@@ -17,6 +17,10 @@ public class EndCtrl : MonoBehaviour
     {
         SceneUtil.Instance.MainMenu();
     }
+    public void ChangeStart()
+    {
+        SceneUtil.Instance.TransScene();
+    }
     public void ChangeTextV()
     {
         if (currIndex >= tests.Count) { anim.Play("Maker"); return; }

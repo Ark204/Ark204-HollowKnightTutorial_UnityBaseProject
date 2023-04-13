@@ -15,7 +15,7 @@ public class PlayerHealthUI : MonoBehaviour
     {
         //血条UI相关组件获取
         healthText = transform.GetChild(1).GetComponent<Text>();
-        healthSlider = transform.GetChild(0).GetChild(0).GetComponent<Image>();
+        healthSlider = transform.GetChild(0).GetChild(1).GetComponent<Image>();
         RefreshSkill();//初始化技能栏
         cfg.OnSkillAdd += RefreshSkill;//添加对技能增加事件的监听
     }

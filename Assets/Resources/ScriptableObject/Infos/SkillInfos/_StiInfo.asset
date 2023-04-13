@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Icon: {fileID: -8593000467125394421, guid: 360ac095e3caf71408f5907f665ff0ce, type: 3}
   displayName: "\u66FF\u8EAB\u672F"
-  describe: 6
+  describe: "\u4F7F\u7528\u540E\u5728\u6781\u77ED\u7684\u65F6\u95F4\u5185\u82E5\u6536\u5230\u653B\u51FB\u5219\u514D\u75AB\u5E76\u4E14\u89E6\u53D1\u4E00\u6B21\u51CFCD\u6548\u679C\uFF0C\u89E6\u53D1\u514D\u75AB\u7684\u540C\u65F6\u82E5\u6309\u4E0B\u65B9\u5411\u952E\u4F1A\u5411\u8BE5\u65B9\u5411\u77AC\u79FB\u4E00\u6BB5\u8DDD\u79BB"
   m_id: -2
   m_cdTimee: 0

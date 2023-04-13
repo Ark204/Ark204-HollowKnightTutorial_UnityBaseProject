@@ -25,6 +25,10 @@ public class SceneUtil : MonoSingleton<SceneUtil>
     {
         StartCoroutine(GoMainMenu("Ending"));
     }
+    public void Starting()
+    {
+        StartCoroutine(GoMainMenu("Starting"));
+    }
     //Ö¸¶¨×ªÒÆ
     public void TransScene(string sceneName, int targetId)
     {

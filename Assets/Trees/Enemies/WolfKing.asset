@@ -367,7 +367,6 @@ MonoBehaviour:
   description: "\u968F\u673A\u653B\u51FB\u9009\u62E9"
   drawGizmos: 0
   children:
-  - {fileID: -1044212708036850713}
   - {fileID: 7563770650112445698}
 --- !u!114 &11400000
 MonoBehaviour:

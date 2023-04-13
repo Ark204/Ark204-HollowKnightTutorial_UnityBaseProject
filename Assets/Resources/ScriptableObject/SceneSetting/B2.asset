@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69e46aa666a32e4895e7d2ea9e3ed28, type: 3}
   m_Name: B2
   m_EditorClassIdentifier: 
-  saveCount: 1
+  saveCount: 2
   bools: 
-  saveBools: 00
+  saveBools: 0100

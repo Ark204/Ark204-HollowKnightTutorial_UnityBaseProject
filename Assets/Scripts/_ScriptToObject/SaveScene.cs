@@ -12,6 +12,10 @@ public class SaveScene : BSaveData
     {
         SceneUtil.Instance.MainMenu();//回到主菜单
     }
+    public void Starting()
+    {
+        SceneUtil.Instance.Starting();//前往开场动画
+    }
     //指定转移
     public void TransScene(string sceneName, int targetId)
     {

@@ -166,7 +166,17 @@ public class SmashFlyer : MonoBehaviour
 
             if (rayCastHit.collider != null)
             {
-                speed.y = Mathf.Abs(speed.x);
+                //speed.y = Mathf.Abs(speed.x);
+                speed.y = Mathf.Abs(speed.y);
+            }
+
+            //增加上方的地形检测
+            rayCastHit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + rayCastOffsetY), Vector2.up, rayCastWidth, layerMask);
+            Debug.DrawRay(new Vector2(transform.position.x, transform.position.y + rayCastOffsetY), Vector2.up * rayCastWidth, Color.green);
+
+            if (rayCastHit.collider != null)
+            {
+                speed.y = -(Mathf.Abs(speed.y));
 
             }
         }

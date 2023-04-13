@@ -14,8 +14,8 @@ public class FaceToPlayer : EnemyAction
         try
         {
             if (range.target.position.x - context.transform.position.x > 0) //>0 ср╠ъ <0 вС
-                context.transform.localScale = new Vector3(baseFace, context.transform.localScale.y, context.transform.localScale.z);
-            else context.transform.localScale = new Vector3(-baseFace, context.transform.localScale.y, context.transform.localScale.z);
+                context.transform.localScale = new Vector3(baseFace* Mathf.Abs(context.transform.localScale.x), context.transform.localScale.y, context.transform.localScale.z);
+            else context.transform.localScale = new Vector3(-baseFace * Mathf.Abs(context.transform.localScale.x), context.transform.localScale.y, context.transform.localScale.z);
             return State.Success;
         }
         catch { return State.Failure; }

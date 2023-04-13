@@ -31,7 +31,10 @@ public class AttackTrigger : MonoBehaviour
         {
             foreach(var elem in collider2Ds)
             {
-                elem.GetComponent<BeAttackedable>().OnAttackHit(Vector2.zero, Vector2.zero, damage);
+                var attackAble = elem.GetComponent<BeAttackedable>();
+                if (attackAble == null) continue;
+                //ÕýÊ½ÃüÖÐ
+                attackAble.OnAttackHit(Vector2.zero, Vector2.zero, damage);
                 TQueueExtion.OnSkillHurt?.Invoke(id);
             }
         }

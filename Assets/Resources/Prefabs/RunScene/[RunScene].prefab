@@ -157,11 +157,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3375920578887563591, guid: afeac2b38a2717343a93ac96ef3ffbaf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7
+      value: -2.895537
       objectReference: {fileID: 0}
     - target: {fileID: 3375920578887563591, guid: afeac2b38a2717343a93ac96ef3ffbaf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -2.749489
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afeac2b38a2717343a93ac96ef3ffbaf, type: 3}
@@ -280,6 +280,14 @@ PrefabInstance:
     - target: {fileID: 1449936804348340949, guid: 88fc84d355d5cb34982d624c3da2c44c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709051659311612159, guid: 88fc84d355d5cb34982d624c3da2c44c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3080436655542986542, guid: 88fc84d355d5cb34982d624c3da2c44c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4297484260655382453, guid: 88fc84d355d5cb34982d624c3da2c44c, type: 3}
       propertyPath: m_AnchorMax.y

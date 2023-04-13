@@ -10,7 +10,10 @@ public class PlayerTrigger : MonoBehaviour
     {
         if (collision.gameObject.layer==10)
         {
-            collision.GetComponent<BeAttackedable>().OnAttackHit(Vector2.zero, Vector2.zero, damage);
+            var attackAble = collision.GetComponent<BeAttackedable>();
+            if (attackAble == null) return;
+            //ÕýÊ½ÃüÖÐ
+            attackAble.OnAttackHit(Vector2.zero, Vector2.zero, damage);
             TQueueExtion.OnSkillHurt?.Invoke(id);
         }
     }

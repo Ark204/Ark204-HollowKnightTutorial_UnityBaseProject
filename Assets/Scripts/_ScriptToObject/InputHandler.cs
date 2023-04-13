@@ -39,7 +39,7 @@ public class InputHandler :ScriptableObject
             new KeyPair("dashKey", KeyCode.Space),
             new KeyPair( "attackKey", KeyCode.A),
             new KeyPair( "upswingKey", KeyCode.Alpha2),
-            new KeyPair("subductionKey", KeyCode.W),
+            //new KeyPair("subductionKey", KeyCode.W),ÒÆ³ý¸©³å
             new KeyPair("cycloneKey", KeyCode.E),
             new KeyPair("chopKey", KeyCode.R),
             new KeyPair("substituteKey", KeyCode.LeftShift),

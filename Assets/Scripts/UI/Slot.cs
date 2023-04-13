@@ -14,7 +14,7 @@ public class Slot : MonoBehaviour, ISelectHandler
     }
     public void SkillOnClicked()
     {
-        string allinfo = "技能名称 ：" + skill.DisplayName + '\n' + "技能介绍 ：" +  skill.Describe + '\n' + "CD :" + skill.CdTime;
+        string allinfo = /*"技能名称 ：" +*/ skill.DisplayName + '\n' + /*"技能介绍 ：" + */ skill.Describe + '\n' + "CD :" + skill.CdTime;
         Skill_Inventory.UpdateSkillInfo(allinfo);
     }
 }

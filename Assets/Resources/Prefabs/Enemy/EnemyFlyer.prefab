@@ -208,19 +208,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2608053604087006843}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!82 &2671636426714375725
 AudioSource:
   m_ObjectHideFlags: 0
@@ -401,7 +401,7 @@ MonoBehaviour:
   bomb: {fileID: 6605764222714564134, guid: b852493f8b9fa3449963e182d8f502f3, type: 3}
   getPlayer: {fileID: 8423386013226497588}
   rayCastWidth: 2
-  rayCastOffsetY: 1
+  rayCastOffsetY: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -10099,7 +10099,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: c5b816251bafd429a9c5d01e64f6bffb, type: 2}
-  - {fileID: 2100000, guid: c5b816251bafd429a9c5d01e64f6bffb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14973,7 +14972,6 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 603da0201f8bc43b49b10028f386f4c6, type: 2}
   - {fileID: 2100000, guid: 603da0201f8bc43b49b10028f386f4c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -19849,7 +19847,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 3535cc9425d5e486a9eec837a1244319, type: 2}
-  - {fileID: 2100000, guid: 3535cc9425d5e486a9eec837a1244319, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20046,7 +20043,7 @@ AreaEffector2D:
     m_Bits: 64
   m_UseGlobalAngle: 0
   m_ForceAngle: 0
-  m_ForceMagnitude: 10
+  m_ForceMagnitude: 0
   m_ForceVariation: 0
   m_ForceTarget: 0
   m_Drag: 0
@@ -24896,7 +24893,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 37e60135e0ed9486184e3a399bc20898, type: 2}
-  - {fileID: 2100000, guid: 37e60135e0ed9486184e3a399bc20898, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25168,8 +25164,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.9960785, g: 0, b: 0.3254902, a: 1}
-      maxColor: {r: 1, g: 0, b: 0.32941177, a: 1}
+      minColor: {r: 0.41568628, g: 0.41568628, b: 0.41568628, a: 1}
+      maxColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -29775,7 +29771,6 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c7307e505630a49d18ea2cc9f897b626, type: 2}
   - {fileID: 2100000, guid: c7307e505630a49d18ea2cc9f897b626, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

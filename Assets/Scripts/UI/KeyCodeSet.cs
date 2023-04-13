@@ -48,10 +48,22 @@ public class KeyCodeSet : MonoBehaviour
                     if (keycode == KeyCode.Escape) continue;
                     if (Input.GetKeyDown(keycode))
                     {
-                        ChangingKey.GetComponentInChildren<Text>().text = keycode.ToString();  //改UI显示
-                        InputManager.Instance.inputSystemDic[ChangingKey.transform.name].currKeyCode = keycode; //通过名字改按键字典
-                        //InputManager.GetInstance().inputSystemDic[ChangingKey.transform.name] = keycode; //通过名字改按键字典
-                        //InputManager.GetInstance().Show();
+                        bool hasKey = false;//是否已有该键，默认false->否
+                        foreach (var elem in InputManager.Instance.inputSystemDic)//遍历每个按键
+                        {
+                            if (elem.Value.currKeyCode == keycode)
+                            {
+                                hasKey = true;
+                                break;
+                            }
+                        }
+                        if (!hasKey)//若该键不存在，则修改
+                        {
+                            ChangingKey.GetComponentInChildren<Text>().text = keycode.ToString();  //改UI显示
+                            InputManager.Instance.inputSystemDic[ChangingKey.transform.name].currKeyCode = keycode; //通过名字改按键字典
+                             //InputManager.GetInstance().inputSystemDic[ChangingKey.transform.name] = keycode; //通过名字改按键字典
+                            //InputManager.GetInstance().Show();
+                        }
                     }
                     SumActive = false;
                 }

@@ -29,8 +29,6 @@ MonoBehaviour:
     currKeyCode: 97
   - keyName: upswingKey
     currKeyCode: 50
-  - keyName: subductionKey
-    currKeyCode: 119
   - keyName: cycloneKey
     currKeyCode: 101
   - keyName: chopKey

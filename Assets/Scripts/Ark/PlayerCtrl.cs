@@ -143,7 +143,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
             //if (Input.GetButtonDown("Shield") && Energe > 2 && moveCtrl.isOnGround) { skillManager.UseSkill(5); }
             if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["upswingKey"])) Upswing();
             if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["cycloneKey"]) && !moveCtrl.isOnGround) Cyclone();
-            if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["subductionKey"]) && !moveCtrl.isOnGround) skillManager.UseSkill(8);
+            //if (Input.GetKeyDown(InputManager.Instance.inputSystemDic["subductionKey"]) && !moveCtrl.isOnGround) skillManager.UseSkill(8);移除俯冲
             //if (Input.GetKeyDown(KeyCode.Q)) skillManager.UseSkill(9);
             //if (Input.GetKeyDown(KeyCode.H)) NewCure();
             if(Input.GetKeyDown(InputManager.Instance.inputSystemDic["substituteKey"])) skillManager.UseSkill(10);
@@ -357,11 +357,21 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         //if (!Input.GetKey(InputManager.Instance.inputSystemDic["substituteKey"])) dir = Vector2.zero;//若没有按下替身术键，则不瞬移
         //射线检测目标方向-->瞬移距离=Min(distance,Line)
         //Debug.Log(dir);//看看方向
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position + offset, dir, distance, Impenetrable);
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position + offset, dir, distance, Impenetrable);//中部射线
+        var hitUp= Physics2D.Raycast(transform.position + offset+new Vector3(0,0.9f,0), dir, distance, Impenetrable);//头部射线
+        var hitDown = Physics2D.Raycast(transform.position + offset + new Vector3(0, -0.9f, 0), dir, distance, Impenetrable);//腿部射线
         float trueDis = distance;//真正瞬移距离
-        if (hitInfo.collider != null)//该方向上有地形阻挡
+        if (hitInfo.collider != null)//中部射线方向上有地形阻挡
         {
-            trueDis = Vector2.Distance(transform.position + offset, hitInfo.point);//真正瞬移距离为当前位置到地形的距离
+            trueDis = Vector2.Distance(transform.position + offset, hitInfo.point)- ImpOffset;//真正瞬移距离为当前位置到地形的距离
+        }
+        else if(hitUp.collider!=null)//头部射线有地形阻挡
+        {
+            trueDis = Vector2.Distance(transform.position + offset, hitUp.point) - ImpOffset;
+        }
+        else if(hitDown.collider!=null)//腿部射线有地形阻挡
+        {
+            trueDis = Vector2.Distance(transform.position + offset, hitDown.point) - ImpOffset;
         }
         transform.position = transform.position + (Vector3)dir.normalized * trueDis;//瞬移
         playerData.lastSkillID = -1;//重置上一次触发的技能ID

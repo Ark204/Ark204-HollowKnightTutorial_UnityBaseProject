@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ChopInfo
   m_EditorClassIdentifier: 
   m_Icon: {fileID: 204434607578480675, guid: 2009c3553ebfe1544846a402a2f43571, type: 3}
-  displayName: "\u4E94\u5F71\u65A9"
-  describe: "\u5411\u524D\u65B9\u65A9\u52075\u6B21\uFF0C\u6BCF\u6B21\u547D\u4E2D\u53EF\u4EE5\u6062\u590D3\u70B9\u4F53\u529B\uFF0C\u4F7F\u7528\u8FC7\u7A0B\u65E0\u654C\uFF0C\u53EF\u4EE5\u79FB\u52A8"
+  displayName: "\u5251\u821E"
+  describe: "\u5411\u524D\u65B9\u65A9\u52075\u6B21\uFF0C\u6BCF\u6B21\u547D\u4E2D\u53EF\u4EE5\u6062\u590D2\u70B9\u4F53\u529B\uFF0C\u4F7F\u7528\u8FC7\u7A0B\u65E0\u654C\uFF0C\u53EF\u4EE5\u79FB\u52A8"
   m_id: 11
   m_cdTimee: 125

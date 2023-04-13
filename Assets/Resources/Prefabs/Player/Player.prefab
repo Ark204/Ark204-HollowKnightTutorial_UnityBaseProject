@@ -471,7 +471,7 @@ MonoBehaviour:
   Impenetrable:
     serializedVersion: 2
     m_Bits: 128
-  offset: {x: 0, y: 0.5, z: 0}
+  offset: {x: 0, y: 1, z: 0}
   ImpOffset: 0.5
   shadow: {fileID: 9153157956653875061, guid: 2511b618ed48863459a6e1fb684d77dc, type: 3}
 --- !u!1 &5054922923598194805
