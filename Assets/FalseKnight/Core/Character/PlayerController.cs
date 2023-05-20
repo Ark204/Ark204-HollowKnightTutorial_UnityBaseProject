@@ -24,6 +24,7 @@ namespace Core.Character
         public float jumpForce = 350.0f;
         public float airDrag = 0.8f;//空气阻力
         public Transform bottomTransform;
+        [SerializeField] Vector2 bottomSize;
 
         public GameObject hurtFlashObject;
         
@@ -171,6 +172,12 @@ namespace Core.Character
             previousPositionX = transform.position.x;
             previousPositionY = transform.position.y;
         }
+        private void OnDrawGizmosSelected()
+        {
+            //绘制底部点
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(bottomTransform.position, new Vector2(bottomSize.x,bottomSize.y));
+        }
         private void Move()
         {
             if (!Controllable)
@@ -242,7 +249,7 @@ namespace Core.Character
             isOnGround = false;
 
             currentColliderHits = Physics2D.OverlapBoxNonAlloc(bottomTransform.position,
-                new Vector2(0.24f, 0.2f), 0, currentColliders, combatLayerMask);
+                bottomSize, 0, currentColliders, combatLayerMask);
             //Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(bottomTransform.position, new Vector2(0.24f, 0.2f), 0, combatLayerMask);
             //bool haveCollision = false;
             //foreach (var coll in collider2Ds)

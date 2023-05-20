@@ -16,6 +16,7 @@ public class MoveDele : BDele
         PlayerCtrl playerCtrl = skillManager.GetComponent<PlayerCtrl>();
         playerCtrl.EnableMoveCtrl = false;//禁用移动模块
         Rigidbody2D rigidbody2D = skillManager.GetComponent<Rigidbody2D>();
+        //playerCtrl.transform.Translate(new Vector3(0,0.02f,0));//防卡地板
         direct.Normalize();
         rigidbody2D.velocity = new Vector2(skillManager.transform.localScale.x*speed*direct.x, direct.y*speed);//设置速度
         m_gravityScale = rigidbody2D.gravityScale;//保存重力
@@ -27,6 +28,7 @@ public class MoveDele : BDele
     {
         PlayerCtrl playerCtrl = skillManager.GetComponent<PlayerCtrl>();
         Rigidbody2D rigidbody2D = skillManager.GetComponent<Rigidbody2D>();
+       // playerCtrl.transform.Translate(new Vector3(0, -0.02f, 0));//防卡地板
         //rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;//还原Y轴移动
         rigidbody2D.gravityScale = m_gravityScale;//还原重力
         //behaviorCtrl.modifierAcceptor.RemoveModifier(m_modifier2);//移除无敌状态

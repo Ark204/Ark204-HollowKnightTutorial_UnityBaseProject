@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveCount: 1
   bools: 
-  saveBools: 00
+  saveBools: 01

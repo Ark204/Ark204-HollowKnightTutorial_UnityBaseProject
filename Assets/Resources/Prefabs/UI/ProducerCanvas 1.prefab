@@ -236,7 +236,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7B56\u5212\uFF1A"
+  m_Text: "\u7B56\u5212\uFF1Apotamato"
 --- !u!1 &3301419800400415947
 GameObject:
   m_ObjectHideFlags: 0

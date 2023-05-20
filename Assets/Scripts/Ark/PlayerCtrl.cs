@@ -132,7 +132,7 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
         
         m_runtimeSkillCfg.SubCD(Time.deltaTime);//调用减CD
         //if (!CanBeHit) return;//受伤无敌状态 直接返回
-        if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) return;//有UI打开，直接返回
+        if (BlockUI.Blocking) return;//有UI打开，直接返回
         if (skillManager.currSkill == null)
         {
             if (Input.GetKey(InputManager.Instance.inputSystemDic["attackKey"])) skillManager.UseSkill(0);
@@ -277,10 +277,10 @@ public class PlayerCtrl :MonitoredBehaviour/*MonoBehaviour*/
     {
         if (!useableDash) { Debug.Log("未重置"); return; }
         //TODO: 处理cd时间与同一时间内其他技能使用冲突
-        if (Time.realtimeSinceStartup - lastUse_dash > dashCd)//若现在时间-上次使用时间>cd时间
+        if (Time.fixedTime - lastUse_dash > dashCd)//若现在时间-上次使用时间>cd时间
         {
             skillManager.UseSkill(1);//使用技能
-            lastUse_dash = Time.realtimeSinceStartup;//刷新上次使用时间
+            lastUse_dash = Time.fixedTime;//刷新上次使用时间;
             useableDash = false;//关闭
         }
     }

@@ -1993,7 +1993,7 @@ MonoBehaviour:
     m_Bits: 64
   isTouchPlayer: 0
   keyName: upKey
-  text: "\u4F7F\u7528\u65A9\u5207\u6280\u80FD\u547D\u4E2D\u654C\u602A\u53EF\u4EE5\u56DE\u590D\u8840\u91CF"
+  text: "\u4F7F\u7528\u5251\u821E\u6280\u80FD\u547D\u4E2D\u654C\u602A\u53EF\u4EE5\u56DE\u590D\u8840\u91CF"
 --- !u!4 &1377707617
 Transform:
   m_ObjectHideFlags: 0

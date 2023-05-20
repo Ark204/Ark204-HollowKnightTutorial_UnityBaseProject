@@ -6,6 +6,7 @@ using UnityEngine;
 public class BlockUI : MonoBehaviour
 {
     private static BlockUI currBlockUI=null;//当前正阻塞的UI
+    public static bool Blocking { get => currBlockUI ; }
 
     private void OnEnable()
     {

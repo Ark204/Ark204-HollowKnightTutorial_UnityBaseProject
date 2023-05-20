@@ -346,10 +346,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1376463790}
     m_Modifications:
+    - target: {fileID: 1001525021830704126, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3560122292437592084, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1179564771262933012, guid: 001f82776fac5de4e86afb8bde553a40, type: 3}
+    - target: {fileID: 3785305468744359798, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887600814044861424, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
+      propertyPath: m_Text
+      value: "\u221E\u65A9"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887600814044861424, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887600814044861424, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168131878052545529, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168131878052545534, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4168131878129177961, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
       propertyPath: m_Text
       value: "\u8986\u76D6\u5B58\u6863"
@@ -358,6 +386,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 4168131878276088242, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4168131878357440120, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
@@ -792,7 +824,7 @@ PrefabInstance:
       objectReference: {fileID: -1179564771262933012, guid: 001f82776fac5de4e86afb8bde553a40, type: 3}
     - target: {fileID: 4168131879497925357, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
       propertyPath: m_Text
-      value: "\u952E\u4F4D\u8BBE\u7F6E"
+      value: "\u952E\u4F4D\u4FEE\u6539"
       objectReference: {fileID: 0}
     - target: {fileID: 4168131879497925357, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
       propertyPath: m_FontData.m_Font
@@ -848,19 +880,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565562821775936497, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565562821775936497, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8565562821775936497, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 137.15385
       objectReference: {fileID: 0}
     - target: {fileID: 8565562821775936497, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -238.08295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75458f7fee821b841be78557757bcb9d, type: 3}
@@ -1241,6 +1273,10 @@ PrefabInstance:
     - target: {fileID: 3633492684129875192, guid: 91ef7b11fb3faff4db589fef0828c7a9, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552093572254795941, guid: 91ef7b11fb3faff4db589fef0828c7a9, type: 3}
+      propertyPath: m_Text
+      value: "\u7B56\u5212\uFF1Apotamato"
       objectReference: {fileID: 0}
     - target: {fileID: 5915773570046598655, guid: 91ef7b11fb3faff4db589fef0828c7a9, type: 3}
       propertyPath: m_AnchorMax.y

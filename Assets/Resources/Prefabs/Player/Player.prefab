@@ -249,7 +249,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!82 &4796510482394776379
 AudioSource:
@@ -377,6 +377,7 @@ MonoBehaviour:
   jumpForce: 900
   airDrag: 1
   bottomTransform: {fileID: 5054922922291979597}
+  bottomSize: {x: 0.7, y: 0.2}
   hurtFlashObject: {fileID: 2629158396685185510, guid: cab2435f4b771dc49a119b9d2aa2b6ce, type: 3}
   runningDustParticles: {fileID: 0}
   landingSmokeParticles: {fileID: 5470570633696875145, guid: bdb859e9353f86049bf322f669156bb8, type: 3}

@@ -328,6 +328,16 @@ namespace DragonBones
                 slotMeshProxy = null;
             }
         }
+#if UNITY_EDITOR
+        [ContextMenu("ShowAnim")]
+        void ShowAnimDistance()
+        {
+            foreach(var elem in _unityArmature.animation.animations)
+            {
+                Debug.Log(elem.Value.name + ": Length: " + elem.Value.duration);
+            }
+        }
+#endif
     }
 
     public struct CombineMeshInfo
